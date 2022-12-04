@@ -1,5 +1,5 @@
 export const SITE = {
-	title: 'Documentation',
+	title: 'Selleo Design System',
 	description: 'Your website description.',
 	defaultLanguage: 'en_US',
 };
@@ -47,10 +47,9 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
 	en: {
-		'Section Header': [
-			{ text: 'Introduction', link: 'en/introduction' },
-			{ text: 'Button', link: 'en/01-button' },
+		'Components': [
+			{ text: 'Button', link: '01-button' },
 		],
-		'Another Section': [{ text: 'Text', link: 'en/02-text' }],
+		'Else': [{ text: 'Text', link: '02-text' }],
 	},
 };
