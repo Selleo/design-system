@@ -1,0 +1,5 @@
+{
+  "extends": "@selleo/tsconfig/astro.json",
+  "include": ["./src"],
+  "exclude": ["dist", "build", "node_modules"]
+}
