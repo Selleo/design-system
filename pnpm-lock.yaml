@@ -12,7 +12,7 @@ importers:
     devDependencies:
       '@changesets/cli': 2.25.2
       eslint: 8.28.0
-      eslint-config-selleo: link:packages/eslint-config-acme
+      eslint-config-selleo: link:packages/eslint-config-selleo
       prettier: 2.8.0
       turbo: 1.6.3
 
@@ -59,7 +59,7 @@ importers:
     devDependencies:
       html-escaper: 3.0.3
 
-  packages/eslint-config-acme:
+  packages/eslint-config-selleo:
     specifiers:
       eslint-config-next: ^12.0.8
       eslint-config-prettier: ^8.3.0
@@ -85,7 +85,7 @@ importers:
       '@selleo/tailwind': link:../selleo-tailwind
       '@selleo/tsconfig': link:../selleo-tsconfig
       eslint: 8.28.0
-      eslint-config-selleo: link:../eslint-config-acme
+      eslint-config-selleo: link:../eslint-config-selleo
       preact: 10.11.3
       tailwindcss: 3.2.4_postcss@8.4.19
       tsup: 5.12.9_idbjo54bpfgfu5hzy4ncsoa6f4
