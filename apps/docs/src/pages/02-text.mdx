@@ -4,13 +4,16 @@ description: Sample Button documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Button, ButtonHTMLString, ButtonReactString } from '@selleo/core'
-import { Code } from 'astro/components'
+import { Button, parseComponent } from "@selleo/core";
+import { Code } from "astro/components";
+export const { HTMLString, ReactString } = parseComponent(Button);
 
 Below you can find a button component styled with tailwindcss.
+
 ### Preview
+
 <Button>test</Button>
 ### HTML
-<Code code={ButtonHTMLString} lang="tsx" theme="dark-plus"  />
+<Code code={HTMLString} lang="tsx" theme="dark-plus" />
 ### React
-<Code code={ButtonReactString} lang="tsx" theme="dark-plus"  />
+<Code code={ReactString} lang="tsx" theme="dark-plus" />

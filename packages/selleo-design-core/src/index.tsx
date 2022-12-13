@@ -1,2 +1,3 @@
 import {h} from "preact";
-export { Button, ButtonHTMLString, ButtonReactString } from "./Button";
+export { Button } from "./Button";
+export { parseComponent } from './parser';
