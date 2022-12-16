@@ -5,10 +5,12 @@ layout: ../layouts/MainLayout.astro
 ---
 
 import { Button, ButtonExample } from "@selleo/core/src/Button";
-import Preview from "../components/Preview/Preview.astro";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
 
-Below you can find a button component styled with tailwindcss.
+<Description>
+  Below you can find a button component styled with tailwindcss.
+</Description>
 
 <Preview component={Button} />
 <Preview component={ButtonExample} />
-
