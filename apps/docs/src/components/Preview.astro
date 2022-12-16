@@ -1,6 +1,5 @@
 ---
-import { Button, parseComponent } from "@selleo/core";
-import { Preview } from "../components/Preview/Preview.tsx";
+import { parseComponent } from "@selleo/core";
 import { Code } from "astro/components";
 const { component: Component } = Astro.props;
 const { HTMLString, ReactString } = parseComponent(Component);
