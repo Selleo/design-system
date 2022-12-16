@@ -3,10 +3,12 @@
 type Props = {
 	path: string;
 };
+
 const { path } = Astro.props as Props;
-const resolvedPath = `examples/docs/${path}`;
-const url = `https://api.github.com/repos/withastro/astro/commits?path=${resolvedPath}`;
-const commitsURL = `https://github.com/withastro/astro/commits/main/${resolvedPath}`;
+const isIndex = path.includes('pages.mdx');
+const resolvedPath = !isIndex ? `apps/docs/${path}` : '/';
+const url = `https://api.github.com/repos/Selleo/design-system/commits?path=${resolvedPath}`;
+const commitsURL = `https://github.com/Selleo/design-system/commits/main/${resolvedPath}`;
 
 type Commit = {
 	author: {
