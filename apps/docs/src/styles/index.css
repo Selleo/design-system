@@ -3,11 +3,6 @@
 	margin: 0;
 }
 
-/* Global focus outline reset */
-*:focus:not(:focus-visible) {
-	outline: none;
-}
-
 :root {
 	--user-font-scale: 1rem - 16px;
 	--max-width: calc(100% - 1rem);
