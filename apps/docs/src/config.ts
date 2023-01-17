@@ -39,13 +39,17 @@ export const ALGOLIA = {
   apiKey: "XXXXXXXXXX",
 };
 
-export type Sidebar = Record<typeof KNOWN_LANGUAGE_CODES[number], Record<string, { text: string; link: string }[]>>;
+export type Sidebar = Record<
+  typeof KNOWN_LANGUAGE_CODES[number],
+  Record<string, { text: string; link: string }[]>
+>;
 
 export const SIDEBAR: Sidebar = {
   en: {
     Components: [
       { text: "Button", link: "01-button" },
       { text: "Text", link: "02-text" },
+      { text: "Checkbox", link: "03-checkbox" },
       { text: "Headers", link: "05-headers" },
       { text: "Paragraph", link: "06-paragraph" },
       { text: "Hero", link: "07-hero" },
