@@ -4,26 +4,22 @@ This guide explains how to use a React design system starter powered by:
 
 - 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
 - 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
-- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
+- 🌈 [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
+- 🧑‍🚀 [Astro](https://astro.build/) - All-in-one web framework for building fast, content-focused websites
 
 As well as a few others tools preconfigured:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 - [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
-- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
+- [PNPm](https://pnpm.io/) for managing dependency packages
 
-## Using this example
-
-Clone the design system example locally or [from GitHub](https://github.com/vercel/turbo/tree/main/examples/design-system):
+## Installation Guide
 
 ```bash
-npx degit vercel/turbo/examples/design-system design-system
+git clone git@github.com:Selleo/design-system.git
 cd design-system
 pnpm install
-git init . && git add . && git commit -m "Init"
 ```
 
 ### Useful Commands
@@ -34,23 +30,17 @@ git init . && git add . && git commit -m "Init"
 - `yarn changeset` - Generate a changeset
 - `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
 
-## Turborepo
-
-[Turborepo](https://turbo.build/repo) is a high-performance build system for JavaScript and TypeScript codebases. It was designed after the workflows used by massive software engineering organizations to ship code at scale. Turborepo abstracts the complex configuration needed for monorepos and provides fast, incremental builds with zero-configuration remote caching.
-
-Using Turborepo simplifes managing your design system monorepo, as you can have a single lint, build, test, and release process for all packages. [Learn more](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software) about how monorepos improve your development workflow.
-
 ## Apps & Packages
 
 This Turborepo includes the following packages and applications:
 
-- `apps/docs`: Component documentation site with Storybook
-- `packages/@selleo/core`: Core React components
-- `packages/@selleo/utils`: Shared React utilities
-- `packages/@selleo/tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
+- `apps/docs`: Component documentation site with Astro
+- `packages/selleo-design-core`: Core Preact components
+- `packages/selleo-tailwind`: Selleo TailwindCSS config based on Design System on [Figma](https://www.figma.com/file/aAZNLti1x7RHcKO2aaVdyh/Selleo-Design-System)
+- `packages/selleo-tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
 - `packages/eslint-config-selleo`: ESLint preset
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
+Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
 
 This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
 
@@ -91,69 +81,42 @@ selleo-core
 
 ## Components
 
-Each file inside of `selleo-core/src` is a component inside our design system. For example:
+Each file inside of `selleo-design-core/src` contains a list of few variants of given type of the component inside our design system. 
+For example:
 
-```tsx:selleo-core/src/Button.tsx
-import * as React from 'react';
-
-export interface ButtonProps {
-  children: React.ReactNode;
+```tsx:packages/selleo-design-core/src/Button.tsx
+export function ButtonSmall() {
+  return <button class="flex flex-col justify-center text-sm font-extrabold text-neutral-500 min-w-[124px] min-h-[32px]">Text</button>;
 }
 
-export function Button(props: ButtonProps) {
-  return <button>{props.children}</button>;
+export function Button() {
+  return <button class="flex flex-col justify-center text-base font-extrabold text-neutral-500 min-w-[160px] min-h-[48px]">Text</button>;
 }
-
-Button.displayName = 'Button';
 ```
 
-When adding a new file, ensure the component is also exported from the entry `index.tsx` file:
+To add component to the preview page it has to be imported and provided to `Preview.astro` component as property named `component`.
 
-```tsx:selleo-core/src/index.tsx
-import * as React from "react";
-export { Button, type ButtonProps } from "./Button";
-// Add new component exports here
+```mdx:apps/docs/src/pages/01-button.mdx
+---
+title: Button
+description: Sample Button documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { PrimaryButton, PrimaryButtonSmall, PrimaryOutlinedButtonSmall, PrimaryOutlinedButton, ButtonSmall, Button } from "@selleo/core/src/Button";
+... import new component here ex. import { NewComponent } from "@selleo/core/src/NewComponent"
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find a button component styled with tailwindcss.
+</Description>
+
+<Preview component={ButtonSmall} />
+<Preview component={Button} />
+... enter new component as Preview property ex.
+<Preview component={NewComponent} />
 ```
-
-## Storybook
-
-Storybook provides us with an interactive UI playground for our components. This allows us to preview our components in the browser and instantly see changes when developing locally. This example preconfigures Storybook to:
-
-- Use Vite to bundle stories instantly (in milliseconds)
-- Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@selleo-core` for imports
-- Write MDX for component documentation pages
-
-For example, here's the included Story for our `Button` component:
-
-```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@selleo-core/src';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-
-<Meta title="Components/Button" component={Button} />
-
-# Button
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
-
-## Props
-
-<Props of={Box} />
-
-## Examples
-
-<Preview>
-  <Story name="Default">
-    <Button>Hello</Button>
-  </Story>
-</Preview>
-```
-
-This example includes a few helpful Storybook scripts:
-
-- `yarn dev`: Starts Storybook in dev mode with hot reloading at `localhost:6006`
-- `yarn build`: Builds the Storybook UI and generates the static HTML files
-- `yarn preview-storybook`: Starts a local server to view the generated Storybook UI
 
 ## Versioning & Publishing Packages
 
