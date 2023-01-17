@@ -1,0 +1,16 @@
+---
+title: Checkbox
+description: Sample Checkbox documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Checkbox, CheckboxWithError } from "@selleo/core/src/Checkbox";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find a checkbox component styled with tailwindcss.
+</Description>
+
+<Preview component={Checkbox} />
+<Preview component={CheckboxWithError} />
