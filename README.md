@@ -1,13 +1,13 @@
 # Turborepo Design System Starter
 
-This guide explains how to use a React design system starter powered by:
+This Design System is powered by:
 
 - 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
 - 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
 - 🌈 [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🧑‍🚀 [Astro](https://astro.build/) - All-in-one web framework for building fast, content-focused websites
 
-As well as a few others tools preconfigured:
+As well as a few others tools:
 
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
@@ -15,6 +15,8 @@ As well as a few others tools preconfigured:
 - [PNPm](https://pnpm.io/) for managing dependency packages
 
 ## Installation Guide
+
+Make sure you've got a nodejs version from `.tool-versions` file
 
 ```bash
 git clone git@github.com:Selleo/design-system.git
@@ -24,11 +26,11 @@ pnpm install
 
 ### Useful Commands
 
-- `yarn build` - Build all packages including the Storybook site
-- `yarn dev` - Run all packages locally and preview with Storybook
-- `yarn lint` - Lint all packages
-- `yarn changeset` - Generate a changeset
-- `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+- `pnpm build` - Build all packages
+- `pnpm dev` - Run all packages locally and docs
+- `pnpm lint` - Lint all packages
+- `pnpm changeset` - Generate a changeset
+- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
 
 ## Apps & Packages
 
@@ -43,6 +45,15 @@ This Turborepo includes the following packages and applications:
 Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
 
 This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
+
+## Goals
+
+For the v1 the goal is to create ready to copy components based on the Selleo Design System. Later on we will focus on creating a package
+out of it and adding necessary logic / framework integrations.
+
+## Contributions
+
+To contribute pick any of the [Issues](https://github.com/Selleo/design-system/issues) and create a Pull Request and assign [k1eu](https://github.com/k1eu) for a code review and [michalgren](https://github.com/michalgren) for a design check.
 
 ### Compilation
 
