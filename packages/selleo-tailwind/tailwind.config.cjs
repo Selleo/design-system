@@ -71,6 +71,11 @@ module.exports = {
       },
       fontWeight: {
         black: 800
+      },
+      screens: {
+        touch: {
+          raw: 'not ((any-hover: hover) or (any-pointer: fine))'
+        }
       }
     },
   },
