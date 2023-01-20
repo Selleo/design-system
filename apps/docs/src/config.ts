@@ -50,6 +50,8 @@ export const SIDEBAR: Sidebar = {
       { text: "Button", link: "01-button" },
       { text: "Text", link: "02-text" },
       { text: "Headers", link: "05-headers" },
+      { text: "Hero", link: "07-hero" },
+
     ],
     "More Soon": [{ text: "Text", link: "02-text" }],
   },
