@@ -1,0 +1,20 @@
+---
+title: Headers
+description: Sample Headers documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { H1, H2, H3, H4, H5, H6 } from "@selleo/core/src/Headers";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find headers components styled with tailwindcss.
+</Description>
+
+<Preview component={H1} />
+<Preview component={H2} />
+<Preview component={H3} />
+<Preview component={H4} />
+<Preview component={H5} />
+<Preview component={H6} />
