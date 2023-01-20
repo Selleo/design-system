@@ -32,6 +32,15 @@ module.exports = {
       8: "144px",
       9: "192px",
     },
+    screens: {
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1200px',
+      touch: {
+        raw: 'not ((any-hover: hover) or (any-pointer: fine))'
+      }
+    },
     extend: {
       borderWidth: {
         3: '3px'
