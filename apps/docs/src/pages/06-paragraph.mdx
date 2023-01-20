@@ -1,0 +1,19 @@
+---
+title: Paragraph
+description: Sample Paragraph documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Paragraph } from "@selleo/core/src/Paragraph";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find paragraph component styled with tailwindcss.
+</Description>
+
+<Preview component={Paragraph} size="large" weight="regular" name="Large sized paragraph with regular font weight"/>
+<Preview component={Paragraph} size="large" weight="bold" name="Large sized paragraph with bold font weight"/>
+<Preview component={Paragraph} size="medium" weight="regular" name="Medium sized paragraph with regular font weight"/>
+<Preview component={Paragraph} size="medium" weight="bold" name="Medium paragraph with bold font weight"/>
+<Preview component={Paragraph} size="small" name="Small paragraph"/>
