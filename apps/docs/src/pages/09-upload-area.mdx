@@ -1,0 +1,23 @@
+---
+title: Upload Area
+description: Sample Upload Area documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import {
+  UploadAreaDefault,
+  UploadAreaHover,
+  UploadAreaFilled,
+  UploadAreaError,
+} from "@selleo/core/src/UploadArea";
+import Description from "../components/Description.astro";
+import Preview from "../components/Preview.astro";
+
+<Description>
+  Below you can find a button component styled with tailwindcss.
+</Description>
+
+<Preview component={UploadAreaDefault} />
+<Preview component={UploadAreaHover} />
+<Preview component={UploadAreaFilled} />
+<Preview component={UploadAreaError} />
