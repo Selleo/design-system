@@ -58,6 +58,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Avatars", link: "11-avatars" },
       { text: "Input", link: "08-input" },
       { text: "Headers", link: "05-headers" },
+      { text: "SearchInput", link: "16-search-input" },
     ],
     "More Soon": [{ text: "Text", link: "02-text" }],
   },
