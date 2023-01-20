@@ -7,8 +7,7 @@ export const SITE = {
 export const OPEN_GRAPH = {
   image: {
     src: "https://github.com/Selleo/design-system/blob/main/apps/docs/src/assets/logo.png?raw=true",
-    alt:
-      "selleo logo on a dark background"
+    alt: "selleo logo on a dark background",
   },
   twitter: "selleo",
 };
@@ -50,7 +49,8 @@ export const SIDEBAR: Sidebar = {
     Components: [
       { text: "Button", link: "01-button" },
       { text: "Text", link: "02-text" },
+      { text: "Headers", link: "05-headers" },
     ],
-    'More Soon': [{ text: "Text", link: "02-text" }],
+    "More Soon": [{ text: "Text", link: "02-text" }],
   },
 };
