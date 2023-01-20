@@ -1,0 +1,54 @@
+---
+import type * as shiki from "shiki";
+interface Props {
+  code: string;
+  lang?: shiki.Lang | shiki.ILanguageRegistration;
+  theme?: shiki.IThemeRegistration;
+}
+import { Code } from "astro/components";
+const { code, lang, theme } = Astro.props;
+---
+
+<code-with-copy data-code={code}>
+  <button>Copy</button>
+  <Code code={code} lang={lang} theme={theme} />
+</code-with-copy>
+
+<script>
+  class CodeWithCode extends HTMLElement {
+    code: string | undefined;
+    constructor() {
+      super();
+
+      const code = this.dataset.code;
+      this.code = code;
+      const button = this.querySelector("button")!;
+      button.addEventListener("click", () => {
+        this.copyToClipboard();
+      });
+    }
+
+    copyToClipboard() {
+      navigator.permissions.query({ name: "clipboard-write" as any }).then((result) => {
+        if (result.state === "granted" || result.state === "prompt") {
+          this.updateClipboard(this.code || "");
+          return;
+        }
+        alert("pemission denied");
+      });
+    }
+
+    updateClipboard(newClip: string) {
+      navigator.clipboard.writeText(newClip).then(
+        () => {
+          alert("succ");
+        },
+        () => {
+          alert("err");
+        }
+      );
+    }
+  }
+
+  customElements.define("code-with-copy", CodeWithCode);
+</script>
