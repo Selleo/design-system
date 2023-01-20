@@ -67,7 +67,7 @@ module.exports = {
       },
       lineHeight: {
         tight: '21px',
-        relaxed: '1.75'
+        relaxed: '125%'
       },
       fontWeight: {
         black: 800
