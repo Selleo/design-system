@@ -33,6 +33,9 @@ module.exports = {
       9: "192px",
     },
     extend: {
+      borderWidth: {
+        3: '3px'
+      },
       colors: {
         brand: {
           primary: {
@@ -53,7 +56,7 @@ module.exports = {
         black: '#2F3033',
         danger: '#E81B2F',
         neutral: {
-          100: '#ff6d2a',
+          100: '#f4f5f5',
           200: '#eaeaeb',
           300: '#bfc0c4',
           400: '#95979d',
