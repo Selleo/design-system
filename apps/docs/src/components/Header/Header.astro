@@ -1,36 +1,56 @@
 ---
-import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages';
-import * as CONFIG from '../../config';
-import SelleoLogo from './SelleoLogo.astro';
-import SkipToContent from './SkipToContent.astro';
-import SidebarToggle from './SidebarToggle';
-import LanguageSelect from './LanguageSelect';
-import Search from './Search';
+import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
+import * as CONFIG from "../../config";
+import SelleoLogo from "./SelleoLogo.astro";
+import SkipToContent from "./SkipToContent.astro";
+import SidebarToggle from "./SidebarToggle";
+import LanguageSelect from "./LanguageSelect";
+import Search from "./Search";
 
 type Props = {
-	currentPage: string;
+  currentPage: string;
 };
 
 const { currentPage } = Astro.props as Props;
 const lang = getLanguageFromURL(currentPage);
 ---
 
-<header class="flex justify-center items-center overflow-hidden top-0 sticky z-20 md:static md:py-4 h-7 w-full bg-white dark:bg-[#1f2937]">
-	<SkipToContent />
-	<nav class="flex items-center justify-end gap-[1em] w-full max-w-[82em] px-2" title="Top Navigation">
-		<div class="md:hidden">
-			<SidebarToggle client:idle />
-		</div>
-		<div class="flex overflow-hidden w-[30px] text-lg flex-1 shrink-0 font-semibold leading-none text-white gap-0.5 z-[-1] md:w-auto md:m-0 md:z-0">
-			<a class="flex text-[#16191d] dark:text-neutral-200 hover:no-underline transition-colors hover:text-brand-primary-500 dark:hover:text-brand-primary-500" href="/">
-				<SelleoLogo size={60} />
-				<h1 class="hidden md:block md:m-0 md:text-lg md:text-inherit md:font-semibold">{CONFIG.SITE.title ?? 'Documentation'}</h1>
-			</a>
-		</div>
-		<div style="flex-grow: 1;"></div>
-		{KNOWN_LANGUAGE_CODES.length > 1 && <LanguageSelect lang={lang} client:idle />}
-		<div class="flex relative z-10 grow pr-[0.7rem] max-w-[200px] md:max-w-[400px]">
-			<Search client:idle />
-		</div>
-	</nav>
+<header
+  class="flex justify-center items-center overflow-hidden top-0 sticky z-20 md:static md:py-4 h-7 w-full bg-white dark:bg-theme-dark"
+>
+  <SkipToContent />
+  <nav
+    class="flex items-center justify-end gap-[1em] w-full max-w-[82em] px-2"
+    title="Top Navigation"
+  >
+    <div class="md:hidden">
+      <SidebarToggle client:idle />
+    </div>
+    <div
+      class="flex overflow-hidden w-[30px] text-lg flex-1 shrink-0 font-semibold leading-none text-white gap-0.5 z-[-1] md:w-auto md:m-0 md:z-0"
+    >
+      <a
+        class="flex text-theme-gray-100 dark:text-theme-gray-900 hover:no-underline transition-colors hover:text-brand-primary-500 dark:hover:text-brand-primary-500"
+        href="/"
+      >
+        <SelleoLogo size={60} />
+        <h1
+          class="hidden md:block md:m-0 md:text-lg md:text-inherit md:font-semibold"
+        >
+          {CONFIG.SITE.title ?? "Documentation"}
+        </h1>
+      </a>
+    </div>
+    <div style="grow"></div>
+    {
+      KNOWN_LANGUAGE_CODES.length > 0 && (
+        <LanguageSelect lang={lang} client:idle />
+      )
+    }
+    <div
+      class="flex relative z-10 grow pr-[0.7rem] max-w-[200px] md:max-w-[400px]"
+    >
+      <Search client:idle />
+    </div>
+  </nav>
 </header>
