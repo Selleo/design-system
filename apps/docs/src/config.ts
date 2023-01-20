@@ -55,6 +55,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Hero", link: "hero" },
       { text: "Kicker", link: "kicker" },
       { text: "Icon Button", link: "icon-button" },
+      { text: "Upload Area", link: "upload-area" },
     ],
     "More Soon": [{ text: "Text", link: "text" }],
   },
