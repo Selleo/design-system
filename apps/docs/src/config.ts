@@ -51,7 +51,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Text", link: "02-text" },
       { text: "Headers", link: "05-headers" },
       { text: "Hero", link: "07-hero" },
-
+      { text: "Kicker", link: "12-kicker" },
     ],
     "More Soon": [{ text: "Text", link: "02-text" }],
   },
