@@ -4,7 +4,12 @@ description: Sample Input documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Input, InputExample } from "@selleo/core/src/Input";
+import {
+  Input,
+  InputExample,
+  DisabledInput,
+  ErrorInput,
+} from "@selleo/core/src/Input";
 import Preview from "../components/Preview.astro";
 import Description from "../components/Description.astro";
 
@@ -13,3 +18,5 @@ import Description from "../components/Description.astro";
 </Description>
 
 <Preview component={Input} />
+<Preview component={DisabledInput} />
+<Preview component={ErrorInput} />
