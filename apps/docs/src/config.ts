@@ -50,6 +50,7 @@ export const SIDEBAR: Sidebar = {
     Components: [
       { text: "Button", link: "01-button" },
       { text: "Text", link: "02-text" },
+      { text: "Kicker", link: "12-kicker" },
     ],
     'More Soon': [{ text: "Text", link: "02-text" }],
   },
