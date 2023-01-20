@@ -53,6 +53,7 @@ export const SIDEBAR: Sidebar = {
       { text: 'Checkbox', link: '03-checkbox'},
       { text: 'Sidebar', link: '04-sidebar' },
       { text: "Kicker", link: "12-kicker" },
+      { text: "Hero", link: "07-hero" },
     ],
     'More Soon': [{ text: "Text", link: "02-text" }],
   },
