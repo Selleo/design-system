@@ -41,9 +41,9 @@ const lang = getLanguageFromURL(currentPage);
         </h1>
       </a>
     </div>
-    <div style="grow"></div>
+    <div class="grow"></div>
     {
-      KNOWN_LANGUAGE_CODES.length > 0 && (
+      KNOWN_LANGUAGE_CODES.length > 1 && (
         <LanguageSelect lang={lang} client:idle />
       )
     }
