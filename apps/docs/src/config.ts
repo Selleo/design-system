@@ -58,6 +58,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Upload Area", link: "upload-area" },
       { text: "Sidebar", link: "sidebar" },
       { text: "Select", link: "select" },
+      { text: "Input", link: "input" },
     ],
     "More Soon": [{ text: "Text", link: "text" }],
   },
