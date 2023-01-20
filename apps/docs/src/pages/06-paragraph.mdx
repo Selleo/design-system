@@ -1,0 +1,23 @@
+---
+title: Paragraph
+description: Sample Paragraph documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import {
+  ParagraphBody,
+  ParagraphBodyBold,
+  ParagraphBodyMedium,
+  ParagraphBodyMediumBold,
+  ParagraphBodySmall,
+} from "@selleo/core/src/Paragraph";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>Below you can find paragraph component styled with tailwindcss.</Description>
+
+<Preview component={ParagraphBody} />
+<Preview component={ParagraphBodyBold} />
+<Preview component={ParagraphBodyMedium} />
+<Preview component={ParagraphBodyMediumBold} />
+<Preview component={ParagraphBodySmall} />
