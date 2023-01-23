@@ -74,6 +74,7 @@ module.exports = {
         },
         theme: {
           dark: "#1f2937",
+          accent: "#3895ff",
           gray: {
             100: "#16191d",
             400: "#586474",
