@@ -10,13 +10,19 @@ const { editHref } = Astro.props as Props;
 const showMoreSection = CONFIG.COMMUNITY_INVITE_URL;
 ---
 
-{showMoreSection && <h2 class="heading">More</h2>}
-<ul>
+{
+  showMoreSection && (
+    <h2 class="mb-1 md:mt-[3rem] py-[0.1rem] px-2 text-sm uppercase font-bold leading-none">
+      More
+    </h2>
+  )
+}
+<ul class="list-none p-0">
   {
     editHref && (
-      <li class={`header-link depth-2`}>
+      <li class="header-link group pl-2 text-xs md:text-sm transition-colors duration-200 border-l-4 border-theme-gray-950 hover:border-theme-gray-100 dark:border-theme-gray-100 dark:hover:border-theme-gray-950 dark:focus:border-theme-gray-950 focus:border-theme-gray-100 dark:focus-visible:border-theme-gray-950 focus-visible:border-theme-gray-100">
         <a
-          class="no-underline font-inherit text-[1rem]"
+          class="inline-flex gap-1 w-full font-inherit py-[0.4rem] px-0 leading-tight text-inherit no-underline md:py-1 font-inherit text-sm items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white"
           href={editHref}
           target="_blank"
         >
@@ -25,7 +31,7 @@ const showMoreSection = CONFIG.COMMUNITY_INVITE_URL;
             focusable="false"
             data-prefix="fas"
             data-icon="pen"
-            class="svg-inline--fa fa-pen fa-w-16"
+            class="svg-inline--fa fa-pen fa-w-16 opacity-60 group-hover:opacity-80"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
@@ -44,14 +50,18 @@ const showMoreSection = CONFIG.COMMUNITY_INVITE_URL;
   }
   {
     CONFIG.COMMUNITY_INVITE_URL && (
-      <li class={`header-link depth-2`}>
-        <a href={CONFIG.COMMUNITY_INVITE_URL} target="_blank">
+      <li class="header-link group pl-2 text-xs md:text-sm transition-colors duration-200 border-l-4 border-theme-gray-950 hover:border-theme-gray-100 dark:border-theme-gray-100 dark:hover:border-theme-gray-950 dark:focus:border-theme-gray-950 focus:border-theme-gray-100 dark:focus-visible:border-theme-gray-950 focus-visible:border-theme-gray-100">
+        <a
+          class="inline-flex gap-1 w-full font-inherit py-[0.4rem] px-0 leading-tight text-inherit no-underline md:py-1 font-inherit text-sm items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white"
+          href={CONFIG.COMMUNITY_INVITE_URL}
+          target="_blank"
+        >
           <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fas"
             data-icon="comment-alt"
-            class="svg-inline--fa fa-comment-alt fa-w-16"
+            class="svg-inline--fa fa-comment-alt fa-w-16 opacity-60 group-hover:opacity-80"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"

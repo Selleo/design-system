@@ -20,6 +20,7 @@ const MenuToggle: FunctionalComponent = () => {
       aria-pressed={sidebarShown ? "true" : "false"}
       id="menu-toggle"
       onClick={() => setSidebarShown(!sidebarShown)}
+      class="flex items-center py-[0.33em] px-[0.67em] border-0 text-sm justify-center rounded-full gap-0.5"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

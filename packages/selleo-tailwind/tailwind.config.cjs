@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["sofia-pro", ...defaultTheme.fontFamily.sans],
-      "sofia-pro-soft": ["sofia-pro-soft", ...defaultTheme.fontFamily.sans],
+      "sofia-pro-soft": ["sofia-pro-soft", ...defaultTheme.fontFamily.sans]
     },
     fontSize: {
       xs: "14px",
@@ -24,6 +24,7 @@ module.exports = {
       0.5: "4px",
       1: "8px",
       2: "16px",
+      2.5: "20px",
       3: "24px",
       4: "32px",
       5: "40px",
