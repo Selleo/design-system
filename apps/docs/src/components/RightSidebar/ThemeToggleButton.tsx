@@ -58,7 +58,7 @@ const ThemeToggle: FunctionalComponent = () => {
         const checked = t === theme;
         return (
           <label
-            className={`text-theme-gray-100 dark:text-white relative flex items-center justify-center opacity-50 focus-within:outline focus-within:outline-transparent focus-within:ring-1 focus-within:ring-theme-accent ${
+            className={`relative flex items-center justify-center opacity-50 focus-within:outline focus-within:outline-transparent focus-within:ring-1 focus-within:ring-theme-accent ${
               checked
                 ? "text-theme-accent dark:text-theme-accent opacity-100"
                 : ""

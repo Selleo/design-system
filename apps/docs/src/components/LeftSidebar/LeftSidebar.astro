@@ -16,20 +16,20 @@ const sidebar = SIDEBAR[langCode];
 
 <nav class="mr-2 w-full" aria-labelledby="grid-left">
   <ul
-    class="nav-groups h-full py-4 overflow-y-auto overflow-x-visible max-h-screen md:py-0"
+    class="nav-groups h-full py-4 overflow-y-auto overflow-x-visible max-h-screen md:py-0 list-none p-0"
   >
     {
       Object.entries(sidebar).map(([header, children]) => (
         <li class="mt-4 first:pt-4 first:mt-0 mt-4 last:pb-4 last:mb-6">
           <div>
-            <h2>{header}</h2>
-            <ul>
+            <h2 class="mb-2 font-bold leading-none text-xl">{header}</h2>
+            <ul class="list-none p-0">
               {children.map((child) => {
                 const url = Astro.site?.pathname + child.link;
                 return (
                   <li>
                     <a
-                      class={`block text-sm m-[1px] py-[0.3rem] px-2 text-inherit hover:no-underline focus-visible:no-underline hover:bg-theme-gray-950 dark:hover:bg-theme-gray-400 focus-visible:bg-theme-gray-950 dark:focus-visible:bg-theme-gray-400 ${
+                      class={`block text-sm m-[1px] py-[0.3rem] px-2 text-inherit hover:no-underline focus:no-underline focus-visible:no-underline hover:bg-theme-gray-950 dark:hover:bg-theme-gray-400 focus-visible:bg-theme-gray-950 dark:focus-visible:bg-theme-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white ${
                         currentPageMatch === child.link
                           ? "text-theme-accent dark:text-white bg-theme-accent/15 font-semibold"
                           : ""

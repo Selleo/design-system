@@ -63,7 +63,7 @@ export default function Search() {
 
         <span>Search</span>
 
-        <span className="absolute top-[7px] right-[19px] py-[3px] px-[5px] hidden rounded md:flex items-center justify-center tracking-[0.125em] text-[13px] pointer-events-none border border-theme-gray-800 dark:border-theme-gray-400 text-theme-gray-400 dark:border-theme-gray-800 leading-[14px]">
+        <span className="absolute top-[7px] right-[19px] py-[3px] px-[5px] hidden rounded md:flex items-center justify-center tracking-[0.125em] text-[13px] pointer-events-none border border-theme-gray-800 dark:border-theme-gray-400 text-theme-gray-400 dark:text-theme-gray-800 leading-[14px]">
           <span className="sr-only">Press </span>
 
           <kbd>/</kbd>

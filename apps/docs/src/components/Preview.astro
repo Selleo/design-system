@@ -6,15 +6,15 @@ const { HTMLString, ReactString } = parseComponent(Component);
 ---
 
 <div>
-  <h3>Preview - {Component.name}</h3>
+  <h3 class="mb-2 font-bold leading-none">Preview - {Component.name}</h3>
 
   <div>
     <Component />
   </div>
 
-  <h6>HTML</h6>
+  <h5 class="mb-2 font-bold leading-none">HTML</h5>
   <Code code={HTMLString} lang="html" theme="dark-plus" />
 
-  <h6>React</h6>
+  <h5 class="mb-2 font-bold leading-none">React</h5>
   <Code code={ReactString} lang="tsx" theme="dark-plus" />
 </div>
