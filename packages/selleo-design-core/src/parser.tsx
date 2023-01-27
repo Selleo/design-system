@@ -5,8 +5,8 @@ const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
 };
 
-export const parseComponent = (Component: any) => {
-  const HTMLString = render(<Component />, null, { pretty: true });
+export const parseComponent = (Component: any, props: any) => {
+  const HTMLString = render(<Component {...props} />, null, { pretty: true });
   const ReactString = parseToReact(HTMLString);
 
   return {

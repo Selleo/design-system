@@ -4,7 +4,7 @@ description: Sample Button documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { PrimaryButton, PrimaryButtonSmall, PrimaryOutlinedButtonSmall, PrimaryOutlinedButton, LinkButtonSmall, LinkButton } from "@selleo/core/src/Button";
+import { Button } from "@selleo/core/src/Button";
 import Preview from "../components/Preview.astro";
 import Description from "../components/Description.astro";
 
@@ -12,9 +12,9 @@ import Description from "../components/Description.astro";
   Below you can find a button component styled with tailwindcss.
 </Description>
 
-<Preview component={PrimaryButtonSmall} />
-<Preview component={PrimaryButton} />
-<Preview component={PrimaryOutlinedButtonSmall} />
-<Preview component={PrimaryOutlinedButton} />
-<Preview component={LinkButtonSmall} />
-<Preview component={LinkButton} />
+<Preview component={Button} name="Primary" />
+<Preview component={Button} name="Primary Small" small />
+<Preview component={Button} name="Primary Outlined" primaryOutlined />
+<Preview component={Button} name="Primary Outlined Small" primaryOutlined small />
+<Preview component={Button} name="Link" link />
+<Preview component={Button} name="Link Small" link small />
