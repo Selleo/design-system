@@ -1,16 +1,18 @@
 ---
-import { parseComponent } from "@selleo/core";
+import { parseComponent, SwitchComponentState } from "@selleo/core";
 import { Code } from "astro/components";
 const { component: Component } = Astro.props;
 const { HTMLString, ReactString } = parseComponent(Component);
 ---
 
 <div>
-  <h3 class="mb-2 font-bold leading-none">Preview - {Component.name}</h3>
+  <h3 class="mb-2 font-bold leading-none">Preview</h3>
 
-  <div>
-    <Component />
-  </div>
+  <SwitchComponentState client:only="preact" />
+  <!-- <Button client:load />  <<<<< works but states are not per Preview but one global for all and It has to be specific component imported and used, not dynamically via prop as it is right now  -->
+  <!-- <slot /> <<<<< It can render Button but ignores client:load prop in .mdx page file -->
+  <!-- <Component /> <<<<<<< client:load can't be added to <Component client:load /> because Astro doesn't know that component is in fact Preact Component. Even type overwrite doesn't help here. -->
+  <Component />
 
   <h5 class="mb-2 font-bold leading-none">HTML</h5>
   <Code code={HTMLString} lang="html" theme="dark-plus" />

@@ -75,20 +75,25 @@ importers:
 
   packages/selleo-design-core:
     specifiers:
+      '@nanostores/preact': ^0.3.1
       '@selleo/tailwind': workspace:*
       '@selleo/tsconfig': workspace:*
       eslint: ^8.15.0
       eslint-config-selleo: workspace:*
+      nanostores: ^0.7.1
       preact: ^10.11.3
       tailwindcss: ^3.0.24
       tsup: ^5.10.1
       typescript: ^4.5.3
+    dependencies:
+      '@nanostores/preact': 0.3.1_5sqftu44ll5eryprfthm7n6kpu
+      nanostores: 0.7.1
+      preact: 10.11.3
     devDependencies:
       '@selleo/tailwind': link:../selleo-tailwind
       '@selleo/tsconfig': link:../selleo-tsconfig
       eslint: 8.28.0
       eslint-config-selleo: link:../eslint-config-selleo
-      preact: 10.11.3
       tailwindcss: 3.2.4_postcss@8.4.19
       tsup: 5.12.9_idbjo54bpfgfu5hzy4ncsoa6f4
       typescript: 4.9.3
@@ -1013,6 +1018,17 @@ packages:
       vfile: 5.3.6
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@nanostores/preact/0.3.1_5sqftu44ll5eryprfthm7n6kpu:
+    resolution: {integrity: sha512-D5lC1tNhwlVURCFJUTlnRkQ3LRNt6Sc2XHByBwgHPaKLBUPJxAaNAL7kz2dAEhge1fk9dNXAexCdepwiIFodOQ==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      nanostores: ^0.7.0
+      preact: '>=10.0.0'
+    dependencies:
+      nanostores: 0.7.1
+      preact: 10.11.3
     dev: false
 
   /@next/env/13.1.2:
@@ -4778,6 +4794,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  /nanostores/0.7.1:
+    resolution: {integrity: sha512-7HenoVpZOjRudHCmAVWKloBTk3+Ozw49KuRWq/pNlEIIVS3x9dID+I5z3Rhjxl1muhHwv4dFhpT+0FebT9jvaA==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+    dev: false
+
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -5249,6 +5270,7 @@ packages:
 
   /preact/10.11.3:
     resolution: {integrity: sha512-eY93IVpod/zG3uMF22Unl8h9KkrcKIRs2EGar8hwLZZDU1lkjph303V9HZBwufh2s736U6VXuhD109LYqPoffg==}
+    dev: false
 
   /preferred-pm/3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}

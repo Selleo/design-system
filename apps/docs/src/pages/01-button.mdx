@@ -12,5 +12,6 @@ import Description from "../components/Description.astro";
   Below you can find a button component styled with tailwindcss.
 </Description>
 
-<Preview component={Button} />
-<Preview component={ButtonExample} />
+<Preview component={Button}>
+  <Button client:load />
+</Preview>
