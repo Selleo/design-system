@@ -77,6 +77,7 @@ importers:
     specifiers:
       '@selleo/tailwind': workspace:*
       '@selleo/tsconfig': workspace:*
+      classnames: ^2.3.2
       eslint: ^8.15.0
       eslint-config-selleo: workspace:*
       preact: ^10.11.3
@@ -86,6 +87,7 @@ importers:
     devDependencies:
       '@selleo/tailwind': link:../selleo-tailwind
       '@selleo/tsconfig': link:../selleo-tsconfig
+      classnames: 2.3.2
       eslint: 8.28.0
       eslint-config-selleo: link:../eslint-config-selleo
       preact: 10.11.3
@@ -1960,6 +1962,10 @@ packages:
   /ci-info/3.6.2:
     resolution: {integrity: sha512-lVZdhvbEudris15CLytp2u6Y0p5EKfztae9Fqa189MfNmln9F33XuH69v5fvNfiRN5/0eAUz2yJL3mo+nhaRKg==}
     engines: {node: '>=8'}
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: true
 
   /cli-boxes/3.0.0:
     resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
