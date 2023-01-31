@@ -86,12 +86,16 @@ module.exports = {
         },
       },
       letterSpacing: {
+        none: "0",
         normal: "0.01em",
         wide: "0.15em",
       },
       lineHeight: {
         tight: "21px",
         relaxed: "1.75",
+        125: "125%",
+        150: "150%",
+        175: "175%",
       },
       fontWeight: {
         black: 800,
