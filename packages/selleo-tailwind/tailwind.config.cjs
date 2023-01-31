@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["sofia-pro", ...defaultTheme.fontFamily.sans],
-      "sofia-pro-soft": ["sofia-pro-soft", ...defaultTheme.fontFamily.sans]
+      "sofia-pro-soft": ["sofia-pro-soft", ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: "14px",
@@ -95,6 +95,12 @@ module.exports = {
       },
       fontWeight: {
         black: 800,
+      },
+      outlineWidth: {
+        sm: "1.3333px",
+      },
+      outlineOffset: {
+        sm: "1.3333px",
       },
       screens: {
         touch: {
