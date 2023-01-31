@@ -1,0 +1,7 @@
+{
+  "tailwindCSS.experimental.classRegex": ["cx\\(([^)]*)\\)"],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.lint.cssConflict": "ignore"
+}
