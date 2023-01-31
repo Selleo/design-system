@@ -18,9 +18,9 @@ export function Paragraph({
   const paragraphClassname = cx(
     "dark:text-white font-sans tracking-normal text-neutral-400",
     {
-      "text-base leading-[175%]": size === "large",
-      "text-sm leading-[175%]": size === "medium",
-      "text-xs font-normal leading-[150%]": size === "small",
+      "text-base leading-175": size === "large",
+      "text-sm leading-175": size === "medium",
+      "text-xs font-normal leading-150": size === "small",
       "font-normal": weight === "regular",
       "font-bold": weight === "bold",
     }
