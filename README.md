@@ -32,6 +32,10 @@ pnpm install
 - `pnpm changeset` - Generate a changeset
 - `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
 
+### Useful extensions
+
+- [Tailwind CSS IntelliSense](https://github.com/tailwindlabs/tailwindcss-intellisense) which provides features such as autocomplete, syntax highlighting, and linting for Tailwindcss
+
 ## Apps & Packages
 
 This Turborepo includes the following packages and applications:
@@ -92,7 +96,7 @@ selleo-core
 
 ## Components
 
-Each file inside of `selleo-design-core/src` contains a list of few variants of given type of the component inside our design system. 
+Each file inside of `selleo-design-core/src` contains a list of few variants of given type of the component inside our design system.
 For example:
 
 ```tsx:packages/selleo-design-core/src/Button.tsx
