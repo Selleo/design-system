@@ -106,6 +106,9 @@ module.exports = {
       outlineOffset: {
         sm: "1.3333px",
       },
+      boxShadow: {
+        100: "0 0 16px rgba(47, 48, 51, 0.05), 0 32px 72px rgba(47, 48, 51, 0.07)",
+      },
       screens: {
         touch: {
           raw: "not ((any-hover: hover) or (any-pointer: fine))",
