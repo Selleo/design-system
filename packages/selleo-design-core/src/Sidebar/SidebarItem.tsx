@@ -16,11 +16,12 @@ export function SidebarItem({ icon, label, active }: Props) {
       "text-brand-primary-500": active,
     }
   );
+
   return (
     <li class="m-0 mb-5 cursor-pointer list-none">
       <div class={itemClasses}>
         <IconComponent />
-        <span class="ml-[12px]">{label}</span>
+        <span class="ml-1">{label}</span>
       </div>
     </li>
   );
