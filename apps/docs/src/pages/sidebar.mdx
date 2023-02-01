@@ -4,7 +4,8 @@ description: Sample Sidebar documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Sidebar } from "@selleo/core/src/Sidebar";
+import { Sidebar, SidebarItem } from "@selleo/core/src/Sidebar";
+import { DashboardIcon } from "@selleo/core/src/icons";
 import Preview from "../components/Preview.astro";
 import Description from "../components/Description.astro";
 import PageTemplate from "../components/PageTemplate.astro";
@@ -14,3 +15,16 @@ import PageTemplate from "../components/PageTemplate.astro";
 </Description>
 
 <PageTemplate component={Sidebar} name="Sidebar" />
+<Preview
+  component={SidebarItem}
+  icon={DashboardIcon}
+  name="Sidebar Item"
+  label="Dashboard"
+/>
+<Preview
+  component={SidebarItem}
+  icon={DashboardIcon}
+  name="Sidebar Item Active"
+  active
+  label="Dashboard"
+/>
