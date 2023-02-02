@@ -5,6 +5,7 @@ layout: ../layouts/MainLayout.astro
 ---
 
 import { Button } from "@selleo/core/src/Button";
+import { PlaceholderIcon } from "@selleo/core/src/icons";
 import Preview from "../components/Preview.astro";
 import Description from "../components/Description.astro";
 
@@ -13,13 +14,130 @@ import Description from "../components/Description.astro";
 </Description>
 
 <Preview component={Button} name="Primary" />
+<Preview
+  component={Button}
+  name="Primary - Icon Start"
+  iconStart={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary - Icon End"
+  iconEnd={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary - Icon Start/End"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+/>
 <Preview component={Button} name="Primary Small" size="small" />
+<Preview
+  component={Button}
+  name="Primary Small - Icon Start"
+  iconStart={PlaceholderIcon}
+  size="small"
+/>
+<Preview
+  component={Button}
+  name="Primary Small - Icon End"
+  iconEnd={PlaceholderIcon}
+  size="small"
+/>
+<Preview
+  component={Button}
+  name="Primary Small - Icon Start/End"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+  size="small"
+/>
 <Preview component={Button} name="Primary Outlined" variant="primaryOutlined" />
+<Preview
+  component={Button}
+  name="Primary Outlined - Icon Start"
+  variant="primaryOutlined"
+  iconStart={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary Outlined - Icon End"
+  variant="primaryOutlined"
+  iconEnd={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary Outlined - Icon Start/End"
+  variant="primaryOutlined"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+/>
 <Preview
   component={Button}
   name="Primary Outlined Small"
   variant="primaryOutlined"
   size="small"
 />
+<Preview
+  component={Button}
+  name="Primary Outlined Small - Icon Start"
+  variant="primaryOutlined"
+  size="small"
+  iconStart={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary Outlined Small - Icon End"
+  variant="primaryOutlined"
+  size="small"
+  iconEnd={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Primary Outlined Small - Icon Start/End"
+  variant="primaryOutlined"
+  size="small"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+/>
 <Preview component={Button} name="Link" variant="link" />
+<Preview
+  component={Button}
+  name="Link - Icon Start"
+  variant="link"
+  iconStart={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Link - Icon End"
+  variant="link"
+  iconEnd={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Link - Icon Start/End"
+  variant="link"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+/>
 <Preview component={Button} name="Link Small" variant="link" size="small" />
+<Preview
+  component={Button}
+  name="Link Small - Icon Start"
+  variant="link"
+  size="small"
+  iconStart={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Link Small - Icon End"
+  variant="link"
+  size="small"
+  iconEnd={PlaceholderIcon}
+/>
+<Preview
+  component={Button}
+  name="Link Small - Icon Start/End"
+  variant="link"
+  size="small"
+  iconStart={PlaceholderIcon}
+  iconEnd={PlaceholderIcon}
+/>
