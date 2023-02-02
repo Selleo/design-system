@@ -47,14 +47,15 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   en: {
     Components: [
-      { text: "Button", link: "01-button" },
-      { text: "Text", link: "02-text" },
-      { text: "Checkbox", link: "03-checkbox" },
-      { text: "Headers", link: "05-headers" },
-      { text: "Paragraph", link: "06-paragraph" },
-      { text: "Hero", link: "07-hero" },
-      { text: "Kicker", link: "12-kicker" },
+      { text: "Button", link: "button" },
+      { text: "Text", link: "text" },
+      { text: "Headers", link: "headers" },
+      { text: "Checkbox", link: "checkbox" },
+      { text: "Paragraph", link: "paragraph" },
+      { text: "Hero", link: "hero" },
+      { text: "Kicker", link: "kicker" },
+      { text: "Icon Button", link: "icon-button" },
     ],
-    "More Soon": [{ text: "Text", link: "02-text" }],
+    "More Soon": [{ text: "Text", link: "text" }],
   },
 };
