@@ -4,13 +4,21 @@ import cx from "classnames";
 type Props = {
   variant: "primary" | "primaryOutlined" | "link";
   size: "normal" | "small";
+  iconStart?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
+  iconEnd?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
+  iconTest?: h.JSX.Element;
 } & Omit<h.JSX.HTMLAttributes<HTMLButtonElement>, "size">;
 
 export function Button({
   variant = "primary",
   size = "normal",
+  iconStart,
+  iconEnd,
+  iconTest,
   ...rest
 }: Props) {
+  const IconStart = iconStart;
+  const IconEnd = iconEnd;
   const buttonClasses = cx(
     "flex transition-colors duration-300 font-bold rounded disabled:opacity-30",
     {
@@ -32,9 +40,16 @@ export function Button({
     "gap-1": size === "normal",
   });
 
+  const iconSize = size === "small" ? 16 : 24;
+
   return (
     <button class={buttonClasses} {...rest}>
-      <div class={contentClasses}>Text</div>
+      <div class={contentClasses}>
+        {IconStart && <IconStart width={iconSize} height={iconSize} />}
+        Text
+        {IconEnd && <IconEnd width={iconSize} height={iconSize} />}
+        {iconTest ? iconTest : ""}
+      </div>
     </button>
   );
 }
