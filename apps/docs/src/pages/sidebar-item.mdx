@@ -1,0 +1,29 @@
+---
+title: Sidebar Item
+description: Sample Sidebar documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { SidebarItem } from "@selleo/core/src/Sidebar";
+import { DashboardIcon } from "@selleo/core/src/icons";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find a sidebar item component styled with tailwindcss.
+</Description>
+
+<Preview
+  component={SidebarItem}
+  icon={DashboardIcon}
+  name="Sidebar Item"
+  label="Dashboard"
+/>
+
+<Preview
+  component={SidebarItem}
+  icon={DashboardIcon}
+  name="Sidebar Item Active"
+  active
+  label="Dashboard"
+/>
