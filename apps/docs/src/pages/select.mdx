@@ -1,0 +1,16 @@
+---
+title: Select
+description: Sample Select documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Select } from "@selleo/core/src/Select";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find a Select component styled with tailwindcss.
+</Description>
+
+<Preview component={Select} name="Select - Without Label" />
+<Preview component={Select} name="Select - With Label" label="Label" />
