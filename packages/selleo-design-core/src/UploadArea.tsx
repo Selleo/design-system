@@ -1,33 +1,35 @@
-import { h } from "preact";
+import { createRef, Fragment, h } from "preact";
+import cx from "classnames";
+import { ClearIcon } from "./icons";
 
-export function UploadAreaDefault() {
-  return (
-    <div class="border-dashed border-2 dark:border-neutral-400 rounded text-center p-1 dark:text-neutral-400">
-      Attach file
-    </div>
+type Props = {
+  variant: "default" | "error" | "filled";
+  label: string;
+} & h.JSX.HTMLAttributes<HTMLInputElement>;
+
+export function UploadArea({
+  variant = "default",
+  label = "Attach file",
+}: Props) {
+  const inputClasses = cx(
+    "border-2 leading-175 rounded p-1 text-center transition-all duration-300 cursor-pointer relative",
+    {
+      "border-dashed border-neutral-400 text-neutral-400 hover:border-neutral-500 hover:text-neutral-500 dark:hover:border-neutral-300 dark:hover:text-neutral-300":
+        variant === "default",
+      "border-dashed border-neutral-400 text-danger": variant === "error",
+      "border-solid border-black dark:border-white dark:text-white":
+        variant === "filled",
+    }
   );
-}
 
-export function UploadAreaHover() {
   return (
-    <div class="border-dashed border-2 dark:border-neutral-300 rounded text-center p-1 dark:text-neutral-">
-      Attach file
-    </div>
-  );
-}
-
-export function UploadAreaFilled() {
-  return (
-    <div class="border-solid border-2 dark:border-white rounded text-center p-1">
-      Attach file
-    </div>
-  );
-}
-
-export function UploadAreaError() {
-  return (
-    <div class="border-dashed border-2 dark:border-neutral-400 rounded text-center p-1 text-danger">
-      File weighs too much!
+    <div class="relative">
+      <div class={inputClasses}>{label}</div>
+      {variant === "filled" && (
+        <button class="w-3 h-3 flex items-center justify-center rounded-full border-2 border-black dark:border-white block absolute -right-[12px] -top-[12px] bg-white dark:bg-theme-dark text-brand-primary-500">
+          <ClearIcon />
+        </button>
+      )}
     </div>
   );
 }
