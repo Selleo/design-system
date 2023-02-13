@@ -48,7 +48,6 @@ export const SIDEBAR: Sidebar = {
   en: {
     Components: [
       { text: "Button", link: "button" },
-      { text: "Text", link: "text" },
       { text: "Headers", link: "headers" },
       { text: "Checkbox", link: "checkbox" },
       { text: "Paragraph", link: "paragraph" },
