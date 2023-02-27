@@ -1,0 +1,65 @@
+---
+title: Input
+description: Sample Input documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Input } from "@selleo/core/src/Input";
+import { SearchIcon } from "@selleo/core/src/icons";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+
+<Description>
+  Below you can find a input component styled with tailwindcss.
+</Description>
+
+<Preview
+  component={Input}
+  iconStart={SearchIcon}
+  iconEnd={SearchIcon}
+  name="Input - Icon Start/End"
+  label="Label"
+/>
+<Preview component={Input} label="Label" name="Input" />
+<Preview
+  component={Input}
+  label="Label"
+  iconStart={SearchIcon}
+  name="Input - Icon Start"
+/>
+<Preview
+  component={Input}
+  label="Label"
+  iconEnd={SearchIcon}
+  name="Input - Icon End"
+/>
+<Preview
+  component={Input}
+  iconStart={SearchIcon}
+  iconEnd={SearchIcon}
+  disabled
+  label="Label"
+  name="Input - Icon Start/End - Disabled"
+/>
+<Preview
+  iconStart={SearchIcon}
+  iconEnd={SearchIcon}
+  component={Input}
+  variant="error"
+  label="Label"
+  name="Input - Icon Start/End - Error"
+/>
+<Preview
+  iconStart={SearchIcon}
+  iconEnd={SearchIcon}
+  component={Input}
+  name="Input - Icon Start/End - No Label"
+/>
+<Preview
+  component={Input}
+  iconStart={SearchIcon}
+  iconEnd={SearchIcon}
+  size="small"
+  label="Label"
+  name="Input Small - Icon Start/End"
+/>
