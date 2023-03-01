@@ -1,0 +1,40 @@
+---
+import { Input } from "@selleo/core/src/Input";
+---
+
+<div class="flex flex-col">
+  <button
+    id="copy-button"
+    class="p-1 bg-brand-primary-500 rounded-t-lg -translate-x-3 flex-grow-0 self-end"
+    >copy</button
+  >
+  <Input id="cdn-input" size={"normal"} variant={"default"} />
+</div>
+
+<script>
+  const input = document.getElementById("cdn-input");
+  const copyButton = document.getElementById("copy-button");
+  const filename = "selleo-ds.css";
+
+  const text = `<link rel="stylesheet" href="${window.location.origin}/${filename}" />`;
+
+  if (input) {
+    input.setAttribute("value", text);
+
+    input.addEventListener("click", () => {
+      input.select();
+      document.execCommand("copy");
+    });
+
+    input.addEventListener("keydown", (e) => {
+      e.preventDefault();
+    });
+
+    if (copyButton) {
+      copyButton.addEventListener("click", () => {
+        input.select();
+        document.execCommand("copy");
+      });
+    }
+  }
+</script>
