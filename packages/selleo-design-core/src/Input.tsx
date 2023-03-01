@@ -32,14 +32,19 @@ export function Input({
     {
       "bg-white border-neutral-200 hover:border-neutral-300":
         !disabled && variant !== "error",
-      "bg-neutral-200 border-neutral-500 hover:border-neutral-500": disabled,
-      "border-danger hover:border-danger": variant === "error",
+      "bg-neutral-200 border-neutral-500 hover:border-neutral-500 cursor-not-allowed":
+        disabled,
+      "bg-white border-danger hover:border-danger": variant === "error",
       "pl-2": !IconStart,
     }
   );
 
-  const iconClasses =
-    "flex items-center peer-valid:text-neutral-600 peer-disabled:text-neutral-500";
+  const iconClasses = cx(
+    "flex items-center peer-valid:text-neutral-600 peer-disabled:text-neutral-500 rounded",
+    {
+      "bg-white": variant === "error",
+    }
+  );
 
   const startIconClasses = cx(iconClasses, "order-first", {
     "pl-1": size === "small",
@@ -52,7 +57,7 @@ export function Input({
   });
 
   const inputClasses = cx(
-    "peer rounded w-full pl-1 outline-0 placeholder:text-neutral-300 group-hover:placeholder:text-neutral-600 focus:placeholder:text-neutral-600 valid:text-neutral-600 disabled:bg-neutral-200 disabled:placeholder:text-neutral-500",
+    "peer rounded w-full pl-1 outline-0 placeholder:text-neutral-300 group-hover:placeholder:text-neutral-600 focus:placeholder:text-neutral-600 valid:text-neutral-600 disabled:bg-neutral-200 disabled:placeholder:text-neutral-500 group-hover:disabled:placeholder:text-neutral-500 disabled:cursor-not-allowed",
     {
       "py-2 text-sm": size === "normal",
       "py-1 text-xs": size === "small",
