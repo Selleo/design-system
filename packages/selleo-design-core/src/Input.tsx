@@ -54,8 +54,8 @@ export function Input({
   const inputClasses = cx(
     "peer rounded w-full pl-1 outline-0 placeholder:text-neutral-300 group-hover:placeholder:text-neutral-600 focus:placeholder:text-neutral-600 valid:text-neutral-600 disabled:bg-neutral-200 disabled:placeholder:text-neutral-500",
     {
-      "py-2 text-sm": size === "normal",
-      "py-1 text-xs": size === "small",
+      "py-2 px-2 text-sm": size === "normal",
+      "py-1 px-1 text-xs": size === "small",
     }
   );
 
