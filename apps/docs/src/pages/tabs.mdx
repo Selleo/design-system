@@ -1,0 +1,28 @@
+---
+title: Tabs
+description: Sample Tabs documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Tab, Tabs } from '@selleo/core/src/Tabs';
+import { DashboardIcon } from '@selleo/core/src/icons';
+
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+
+<Description>
+  Below you can find a tabs component styled with tailwindcss.
+</Description>
+
+<Preview component={Tabs} name="Tabs" tabsAmount={6} selectedId={1} />
+
+<Preview component={Tab} name="Tab" name="Default tab" active={false} />
+
+<Preview component={Tab} name="Active tab" active={true} />
+
+<Preview
+  component={Tab}
+  name="Tab with icon"
+  active={false}
+  icon={DashboardIcon}
+/>
