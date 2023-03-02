@@ -7,7 +7,8 @@ type Props = {
   iconStart?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
   iconEnd?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
   iconTest?: h.JSX.Element;
-} & Omit<h.JSX.HTMLAttributes<HTMLButtonElement>, 'size'>;
+  class: string;
+} & Omit<h.JSX.HTMLAttributes<HTMLButtonElement>, 'size' | 'class'>;
 
 export function Button({
   variant = 'primary',
@@ -15,6 +16,7 @@ export function Button({
   iconStart,
   iconEnd,
   iconTest,
+  class: classes,
   ...rest
 }: Props) {
   const IconStart = iconStart;
@@ -30,7 +32,8 @@ export function Button({
         variant === 'link',
       'py-1 px-2 text-xs': size === 'small',
       'py-1 px-3 text-sm': size === 'normal',
-    }
+    },
+    classes
   );
 
   const contentClasses = cx(
