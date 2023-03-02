@@ -58,6 +58,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Sidebar", link: "sidebar" },
       { text: "Select", link: "select" },
       { text: "Tabs", link: "tabs" },
+      { text: "Input", link: "input" },
     ],
     "More Soon": [{ text: "Text", link: "text" }],
   },

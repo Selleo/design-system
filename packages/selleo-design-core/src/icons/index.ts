@@ -7,3 +7,4 @@ export * from "./SelleoLogo";
 export * from "./PlaceholderIcon";
 export * from "./CheckIcon";
 export * from "./ClearIcon";
+export * from "./SearchIcon";

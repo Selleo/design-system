@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check && tsc",
-    "build": "astro build",
+    "build": "astro build && cp ../../packages/selleo-design-core/dist/styles.css ./dist/selleo-ds.css",
     "preview": "astro preview",
     "astro": "astro"
   },
