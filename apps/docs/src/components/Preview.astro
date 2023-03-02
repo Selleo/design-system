@@ -1,7 +1,7 @@
 ---
 import { parseComponent } from "@selleo/core";
 import CodeWithCopy from "./CodeWithCopy.astro";
-const { component: Component, ...props } = Astro.props;
+const { component: Component, name, ...props } = Astro.props;
 const { HTMLString, ReactString } = parseComponent(Component, props);
 ---
 

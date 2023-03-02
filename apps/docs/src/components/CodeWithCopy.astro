@@ -1,5 +1,6 @@
 ---
 import type * as shiki from "shiki";
+import { Icon } from "astro-icon";
 interface Props {
   code: string;
   lang?: shiki.Lang | shiki.ILanguageRegistration;
@@ -9,39 +10,71 @@ import { Code } from "astro/components";
 const { code, lang, theme } = Astro.props;
 ---
 
-<code-with-copy data-code={code}>
-  <button>Copy</button>
+<code-with-copy class="relative flex flex-col" data-code={code}>
+  <div class="self-end">
+    <Icon
+      name="clipboard-icon"
+      class="cursor-pointer w-3 h-3 text-neutral-800 dark:text-neutral-200"
+    />
+    <div
+      id="copy-success-button"
+      class="absolute top-0 dark:bg-theme-dark bg-white cursor-pointer transition-all duration-300 opacity-0 group"
+    >
+      <div
+        class="absolute -mt-[40px] -ml-[15px] bg-black p-0.5 text-white rounded invisible group-[:not(.opacity-0)]:visible"
+      >
+        Copied
+        <Icon
+          name="tooltip-polygon"
+          class="absolute text-black w-full h-2 left-0 top-100"
+        />
+      </div>
+      <Icon
+        name="clipboard-success-icon"
+        class="cursor-pointer w-3 h-3 text-neutral-800 dark:text-neutral-200"
+      />
+    </div>
+  </div>
   <Code code={code} lang={lang} theme={theme} />
 </code-with-copy>
 
 <script>
-  class CodeWithCode extends HTMLElement {
+  class CodeWithCopy extends HTMLElement {
     code: string | undefined;
+    button: Element;
     constructor() {
       super();
 
       const code = this.dataset.code;
+      const button = this.querySelector("#copy-success-button")!;
+
       this.code = code;
-      const button = this.querySelector("button")!;
+      this.button = button;
+
       button.addEventListener("click", () => {
         this.copyToClipboard();
       });
     }
 
     copyToClipboard() {
-      navigator.permissions.query({ name: "clipboard-write" as any }).then((result) => {
-        if (result.state === "granted" || result.state === "prompt") {
-          this.updateClipboard(this.code || "");
-          return;
-        }
-        alert("pemission denied");
-      });
+      navigator.permissions
+        .query({ name: "clipboard-write" as any })
+        .then((result) => {
+          if (result.state === "granted" || result.state === "prompt") {
+            this.updateClipboard(this.code || "");
+            return;
+          }
+          alert("pemission denied");
+        });
     }
 
     updateClipboard(newClip: string) {
       navigator.clipboard.writeText(newClip).then(
         () => {
-          alert("succ");
+          this.button.classList.remove("opacity-0");
+          setTimeout(() => {
+            this.button.classList.add("opacity-0");
+          }, 1500);
         },
         () => {
           alert("err");
@@ -50,5 +83,5 @@ const { code, lang, theme } = Astro.props;
     }
   }
 
-  customElements.define("code-with-copy", CodeWithCode);
+  customElements.define("code-with-copy", CodeWithCopy);
 </script>
