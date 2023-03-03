@@ -15,21 +15,14 @@ export function LoginWithPasswordView() {
   return (
     <Card>
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md min-w-[300px]">
           <div>
             <SelleoLogoIcon />
             <h2 className="mt-3 text-center text-lg font-bold text-gray-900">
-              Sign in to your account
+              Dashboard
             </h2>
             <p className="mt-1 text-center text-xs text-gray-600">
-              Or
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                {' '}
-                start your 14-day free trial
-              </a>
+              Coworker Portal
             </p>
           </div>
           <form className="mt-4" action="#" method="POST">
@@ -72,7 +65,9 @@ export function LoginWithPasswordView() {
               variant="primary"
               size="normal"
               class="w-[100%] justify-center mt-3 py-1"
-            />
+            >
+              Sign in
+            </Button>
           </form>
         </div>
       </div>
@@ -88,17 +83,10 @@ export function OAuthLoginView() {
           <div>
             <SelleoLogoIcon />
             <h2 className="mt-3 text-center text-lg font-bold text-gray-900">
-              Sign in to your account
+              Dashboard
             </h2>
             <p className="mt-1 text-center text-xs text-gray-600">
-              Or
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                {' '}
-                start your 14-day free trial
-              </a>
+              Coworker Portal
             </p>
           </div>
 
@@ -147,17 +135,10 @@ export function GoogleAuthView() {
           <div>
             <SelleoLogoIcon />
             <h2 className="mt-3 text-center text-lg font-bold text-gray-900">
-              Sign in to your account
+              Dashboard
             </h2>
             <p className="mt-1 text-center text-xs text-gray-600">
-              Or
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                {' '}
-                start your 14-day free trial
-              </a>
+              Coworker Portal
             </p>
           </div>
           <Button
@@ -165,7 +146,9 @@ export function GoogleAuthView() {
             size="normal"
             class="w-[100%] flex justify-center mt-3 py-1 border-radius-2"
             iconStart={GoogleIcon}
-          />
+          >
+            Sign in
+          </Button>
         </div>
       </div>
     </Card>

@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import cx from 'classnames';
+import type { ComponentChildren } from 'preact';
 
 type Props = {
   variant: 'primary' | 'primaryOutlined' | 'link';
@@ -7,7 +8,8 @@ type Props = {
   iconStart?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
   iconEnd?(props: h.JSX.SVGAttributes<SVGSVGElement>): h.JSX.Element;
   iconTest?: h.JSX.Element;
-  class: string;
+  class?: string;
+  children: ComponentChildren;
 } & Omit<h.JSX.HTMLAttributes<HTMLButtonElement>, 'size' | 'class'>;
 
 export function Button({
@@ -17,6 +19,7 @@ export function Button({
   iconEnd,
   iconTest,
   class: classes,
+  children,
   ...rest
 }: Props) {
   const IconStart = iconStart;
@@ -52,7 +55,7 @@ export function Button({
     <button class={buttonClasses} {...rest}>
       <div class={contentClasses}>
         {IconStart && <IconStart width={iconSize} height={iconSize} />}
-        Text
+        {children}
         {IconEnd && <IconEnd width={iconSize} height={iconSize} />}
         {iconTest ? iconTest : ''}
       </div>
