@@ -58,6 +58,9 @@ function removeDups(arr: Commit[]) {
 
   for (let item of arr) {
     const author = item.author;
+
+    if (!author) continue;
+
     // Deduplicate based on author.id
     map.set(author.id, { login: author.login, id: author.id });
   }
@@ -111,7 +114,10 @@ const additionalContributors = unique.length - recentContributors.length; // lis
   }
   {
     unique.length === 0 && (
-      <a href={commitsURL} class="text-theme-accent hover:underline focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+      <a
+        href={commitsURL}
+        class="text-theme-accent hover:underline focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+      >
         Contributors
       </a>
     )
