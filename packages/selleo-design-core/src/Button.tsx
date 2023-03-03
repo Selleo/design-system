@@ -55,9 +55,9 @@ export function Button({
     <button class={buttonClasses} {...rest}>
       <div class={contentClasses}>
         {IconStart && <IconStart width={iconSize} height={iconSize} />}
-        {children}
+        {children || 'Text'}
         {IconEnd && <IconEnd width={iconSize} height={iconSize} />}
-        {iconTest ? iconTest : ''}
+        {iconTest || null}
       </div>
     </button>
   );
