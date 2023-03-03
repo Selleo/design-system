@@ -1,0 +1,84 @@
+---
+title: Typography
+description: Sample Typography documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+import { Paragraph } from '@selleo/core/src/Paragraph';
+import { Hero } from '@selleo/core/src/Hero';
+import { Kicker } from '@selleo/core/src/Kicker';
+import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
+
+<H2>Paragraph</H2>
+
+<Description>
+  Below you can find a Paragraph component styled with tailwindcss.
+</Description>
+
+<Preview
+  component={Paragraph}
+  size="large"
+  weight="regular"
+  name="Large sized paragraph with regular font weight"
+/>
+<Preview
+  component={Paragraph}
+  size="large"
+  weight="bold"
+  name="Large sized paragraph with bold font weight"
+/>
+<Preview
+  component={Paragraph}
+  size="medium"
+  weight="regular"
+  name="Medium sized paragraph with regular font weight"
+/>
+<Preview
+  component={Paragraph}
+  size="medium"
+  weight="bold"
+  name="Medium paragraph with bold font weight"
+/>
+<Preview component={Paragraph} size="small" name="Small paragraph" />
+
+<H2>Hero</H2>
+
+<Description>
+  Below you can find a Hero component styled with tailwindcss.
+</Description>
+
+<Preview component={Hero} name="Hero" />
+
+<H2>Kicker</H2>
+
+<Description>
+  Below you can find a Kicker component styled with tailwindcss.
+</Description>
+
+<Preview component={Kicker} name="Kicker" />
+
+<H2>Headers</H2>
+
+<Description>
+  Below you can find headers components styled with tailwindcss.
+</Description>
+
+<Preview component={H1} name="H1" />
+## Header 1
+
+<Preview component={H2} name="H2" />
+### Header 2
+
+<Preview component={H3} name="H3" />
+#### Header 3
+
+<Preview component={H4} name="H4" />
+##### Header 4
+
+<Preview component={H5} name="H5" />
+###### Header 5
+
+<Preview component={H6} name="H6" />
+###### Header 6
