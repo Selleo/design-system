@@ -1,0 +1,21 @@
+---
+title: LoginView
+description: Sample LoginView documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import {
+  LoginWithPasswordView,
+  OAuthLoginView,
+  GoogleAuthView,
+} from '@selleo/core/src/LoginView';
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+
+<Description>
+  Below you can find LoginView component styled with tailwindcss.
+</Description>
+
+<Preview component={LoginWithPasswordView} name="LoginWithPasswordView" />
+<Preview component={OAuthLoginView} name="OAuthLoginView" />
+<Preview component={GoogleAuthView} name="GoogleAuthView" />
