@@ -12,5 +12,5 @@ export const Card = ({ children, className }: CardProps) => {
     className
   );
 
-  return <div class={classes}>{children}</div>;
+  return <div className={classes}>{children}</div>;
 };

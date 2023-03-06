@@ -6,6 +6,8 @@ layout: ../layouts/MainLayout.astro
 
 import { Button } from '@selleo/core/src/Button';
 import { PlaceholderIcon } from '@selleo/core/src/icons';
+import { IconButton } from '@selleo/core/src/IconButton';
+import { CheckIcon } from '@selleo/core/src/icons';
 import Preview from '../components/Preview.astro';
 import Description from '../components/Description.astro';
 
@@ -140,4 +142,81 @@ import Description from '../components/Description.astro';
   size="small"
   iconStart={PlaceholderIcon}
   iconEnd={PlaceholderIcon}
+/>
+
+<Preview component={IconButton} icon={CheckIcon} name="Primary Medium" />
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Primary Medium - Disabled"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  name="Primary Small"
+  size="small"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Primary Small - Disabled"
+  size="small"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  name="Primary Large"
+  size="large"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Primary Large - Disabled"
+  size="large"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  name="Ghost Medium"
+  variant="ghost"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Ghost Medium - Disabled"
+  variant="ghost"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  name="Ghost Small"
+  variant="ghost"
+  size="small"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Ghost Small - Disabled"
+  variant="ghost"
+  size="small"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  name="Ghost Large"
+  variant="ghost"
+  size="large"
+/>
+<Preview
+  component={IconButton}
+  icon={CheckIcon}
+  disabled
+  name="Ghost Large - Disabled"
+  variant="ghost"
+  size="large"
 />
