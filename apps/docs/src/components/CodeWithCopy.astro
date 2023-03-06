@@ -12,26 +12,29 @@ const { code, lang, theme } = Astro.props;
 
 <code-with-copy class="relative flex flex-col" data-code={code}>
   <div class="self-end">
-    <Icon
-      name="clipboard-icon"
-      class="cursor-pointer w-3 h-3 text-neutral-800 dark:text-neutral-200"
-    />
-    <div
-      id="copy-success-button"
-      class="absolute top-0 dark:bg-theme-dark bg-white cursor-pointer transition-all duration-300 opacity-0 group"
-    >
+    <div class="group rounded">
       <div
-        class="absolute -mt-[40px] -ml-[15px] bg-black p-0.5 text-white rounded invisible group-[:not(.opacity-0)]:visible"
+        class="absolute -mt-5 -ml-2 bg-black p-0.5 text-white rounded invisible group-hover:visible transition-all duration-300"
       >
-        Copied
+        Copy
         <Icon
           name="tooltip-polygon"
           class="absolute text-black w-full h-2 left-0 top-100"
         />
       </div>
       <Icon
+        id="copy-button"
+        name="clipboard-icon"
+        class="cursor-pointer w-3 h-3 text-neutral-200 mt-1 mr-1 peer"
+      />
+    </div>
+    <div
+      id="copy-success-button"
+      class="absolute rounded top-0 bg-code cursor-pointer transition-all duration-300 invisible"
+    >
+      <Icon
         name="clipboard-success-icon"
-        class="cursor-pointer w-3 h-3 text-neutral-800 dark:text-neutral-200"
+        class="cursor-pointer w-3 h-3 text-neutral-200 mr-1 mt-1"
       />
     </div>
   </div>
@@ -42,14 +45,17 @@ const { code, lang, theme } = Astro.props;
   class CodeWithCopy extends HTMLElement {
     code: string | undefined;
     button: Element;
+    successButton: Element;
     constructor() {
       super();
 
       const code = this.dataset.code;
-      const button = this.querySelector("#copy-success-button")!;
+      const successButton = this.querySelector("#copy-success-button")!;
+      const button = this.querySelector("#copy-button")!;
 
       this.code = code;
       this.button = button;
+      this.successButton = successButton;
 
       button.addEventListener("click", () => {
         this.copyToClipboard();
@@ -71,9 +77,9 @@ const { code, lang, theme } = Astro.props;
     updateClipboard(newClip: string) {
       navigator.clipboard.writeText(newClip).then(
         () => {
-          this.button.classList.remove("opacity-0");
+          this.successButton.classList.remove("invisible");
           setTimeout(() => {
-            this.button.classList.add("opacity-0");
+            this.successButton.classList.add("invisible");
           }, 1500);
         },
         () => {
