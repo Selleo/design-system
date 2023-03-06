@@ -5,7 +5,11 @@ module.exports = {
     "../../packages/selleo-design-core/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        code: "#1E1E1E",
+      },
+    },
   },
   plugins: [],
   presets: [require("@selleo/tailwind/tailwind.config.cjs")],

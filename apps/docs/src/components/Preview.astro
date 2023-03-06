@@ -1,20 +1,28 @@
 ---
 import { parseComponent } from "@selleo/core";
 import CodeWithCopy from "./CodeWithCopy.astro";
+import { PreviewSwitch } from "./PreviewSwitch";
 const { component: Component, name, ...props } = Astro.props;
 const { HTMLString, ReactString } = parseComponent(Component, props);
 ---
 
-<div class="preview">
-  <h3 class="font-bold leading-none text-lg">Preview - {name}</h3>
+<div class="preview mt-3">
+  <h3 class="font-bold leading-none text-lg">{name}</h3>
+  <PreviewSwitch client:load>
+    <Component slot="preview" {...props} />
 
-  <div class="my-2">
-    <Component {...props} />
-  </div>
+    <CodeWithCopy
+      slot="HTMLString"
+      code={HTMLString}
+      lang="html"
+      theme="dark-plus"
+    />
 
-  <h6>HTML</h6>
-  <CodeWithCopy code={HTMLString} lang="html" theme="dark-plus" />
-
-  <h6>React</h6>
-  <CodeWithCopy code={ReactString} lang="tsx" theme="dark-plus" />
+    <CodeWithCopy
+      slot="reactString"
+      code={ReactString}
+      lang="tsx"
+      theme="dark-plus"
+    />
+  </PreviewSwitch>
 </div>
