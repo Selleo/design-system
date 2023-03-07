@@ -1,0 +1,19 @@
+---
+title: Dashboard
+description: Sample Dashboard Layout documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { DashboardLayout } from "@selleo/core/src/DashboardLayout";
+import { DashboardIcon } from "@selleo/core/src/icons";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+import PageTemplate from "../components/PageTemplate.astro";
+
+<Description>
+  Below you can find a sample dashboard layout styled with tailwindcss.
+</Description>
+
+<PageTemplate templateHeight="600px" name="Dashboard">
+  <DashboardLayout />
+</PageTemplate>
