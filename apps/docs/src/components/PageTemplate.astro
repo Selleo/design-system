@@ -2,17 +2,37 @@
 import { parseComponent } from "@selleo/core";
 import CodeWithCopy from "./CodeWithCopy.astro";
 import { PreviewSwitch } from "./PreviewSwitch";
+import { MobileViewIFrame } from "./MobileViewIFrame";
 
-const { name } = Astro.props;
+const { name, mobilePath, height } = Astro.props;
 const code = await Astro.slots.render("default");
 const { HTMLString, ReactString } = parseComponent(code);
+
+const defaultHeight = "600px";
 ---
 
-<div class="preview">
+<div class:list={["preview", { "hidden lg:block": !!mobilePath }]}>
   <h3 class="mb-2 font-bold leading-none text-lg">{name}</h3>
 
   <PreviewSwitch client:load>
-    <slot slot="preview" />
+    {
+      mobilePath ? (
+        <MobileViewIFrame
+          slot="preview"
+          client:load
+          height={height}
+          mobilePath={mobilePath}
+        />
+      ) : (
+        <div
+          slot="preview"
+          class="relative bg-neutral-200 dark:bg-neutral-800 mb-2"
+          style={{ height: height || defaultHeight }}
+        >
+          <slot />
+        </div>
+      )
+    }
 
     <CodeWithCopy
       slot="HTMLString"

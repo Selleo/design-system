@@ -1,10 +1,10 @@
-import { Avatar } from './Avatars';
+import { Avatar } from "./Avatars";
 
-import { h } from 'preact';
-import cx from 'classnames';
+import { h } from "preact";
+import cx from "classnames";
 
 type TestimonialProps = {
-  variant: 'regular' | 'big' | 'vertical';
+  variant: "regular" | "big" | "vertical";
   classes: string;
 };
 
@@ -18,31 +18,31 @@ const avatar = (
 
 export function Testimonial({ variant, classes }: TestimonialProps) {
   const containerClasses = cx(
-    'flex',
+    "flex",
     {
-      'h-[111px] max-h-[111px] items-center': variant !== 'vertical',
-      'flex-col': variant === 'vertical',
+      "h-[111px] max-h-[111px] items-center": variant !== "vertical",
+      "flex-col": variant === "vertical",
     },
     classes
   );
 
-  const avatarVariant = variant !== 'vertical' && variant;
+  const avatarVariant = variant !== "vertical" && variant;
 
   const contentClasses = cx({
-    'space-y-1': variant === 'vertical',
+    "space-y-1": variant === "vertical",
   });
 
   const imageClass = cx({
-    'w-[64px] h-[64px] mr-2': variant === 'regular',
-    'w-[111px] h-[111px] mr-4': variant === 'big',
-    'w-[64px] h-[64px] mb-2': variant === 'vertical',
+    "w-[64px] h-[64px] mr-2": variant === "regular",
+    "w-[111px] h-[111px] mr-4": variant === "big",
+    "w-[64px] h-[64px] mb-2": variant === "vertical",
   });
 
   return (
     <div class={containerClasses}>
       {
         <Avatar
-          size={avatarVariant || 'regular'}
+          size={avatarVariant || "regular"}
           image={avatar}
           imageClass={imageClass}
           hideName
