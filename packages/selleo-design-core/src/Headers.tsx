@@ -1,48 +1,67 @@
-import { ComponentChildren, h } from 'preact';
+import { h, FunctionComponent } from 'preact';
+import cx from 'classnames';
 
 type Header = {
-  children: ComponentChildren;
+  class?: string;
 };
 
-export function H1({ children }: Header) {
-  return (
-    <h1 class="font-sans font-normal text-xxl leading-125 tracking-none">
-      {children}
-    </h1>
+export const H1: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-normal text-xxl leading-125 tracking-none',
+    paragraphClasses
   );
-}
-export function H2({ children }: Header) {
-  return (
-    <h2 class="font-sans font-bold text-xl leading-125 tracking-normal">
-      {children}
-    </h2>
+  return <h1 class={classes}>{children}</h1>;
+};
+export const H2: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-bold text-xl leading-125 tracking-normal',
+    paragraphClasses
   );
-}
-export function H3({ children }: Header) {
-  return (
-    <h3 class="font-sans font-bold text-lg leading-125 tracking-normal">
-      {children}
-    </h3>
+  return <h2 class={classes}>{children}</h2>;
+};
+export const H3: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-bold text-lg leading-125 tracking-normal',
+    paragraphClasses
   );
-}
-export function H4({ children }: Header) {
-  return (
-    <h4 class="font-sans font-bold text-md leading-125 tracking-normal">
-      {children}
-    </h4>
+  return <h3 class={classes}>{children}</h3>;
+};
+export const H4: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-bold text-md leading-125 tracking-normal',
+    paragraphClasses
   );
-}
-export function H5({ children }: Header) {
-  return (
-    <h5 class="font-sans font-bold text-sm leading-150 tracking-normal">
-      {children}
-    </h5>
+  return <h4 class={classes}>{children}</h4>;
+};
+export const H5: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-bold text-sm leading-150 tracking-normal',
+    paragraphClasses
   );
-}
-export function H6({ children }: Header) {
-  return (
-    <h6 class="font-sans font-bold text-xs leading-tight tracking-normal">
-      {children}
-    </h6>
+  return <h5 class={classes}>{children}</h5>;
+};
+export const H6: FunctionComponent<Header> = ({
+  class: paragraphClasses,
+  children,
+}) => {
+  const classes = cx(
+    'font-sans font-bold text-xs leading-tight tracking-normal',
+    paragraphClasses
   );
-}
+  return <h6 class={classes}>{children}</h6>;
+};
