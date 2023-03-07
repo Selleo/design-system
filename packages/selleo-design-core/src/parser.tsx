@@ -1,12 +1,21 @@
-import { h } from "preact";
+import { Fragment, h, VNode } from "preact";
 import render from "preact-render-to-string";
+import { parse } from "preact-parser";
 
 const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
 };
 
-export const parseComponent = (Component: any, props: any) => {
-  const HTMLString = render(<Component {...props} />, null, { pretty: true });
+// eslint-disable-next-line react/display-name
+const buildComponent = (html: string) => (): VNode => {
+  const componentHtml = parse(html);
+
+  return <Fragment>{componentHtml}</Fragment>;
+};
+
+export const parseComponent = (html: string) => {
+  const Component = buildComponent(html);
+  const HTMLString = render(<Component />, null, { pretty: true });
   const ReactString = parseToReact(HTMLString);
 
   return {

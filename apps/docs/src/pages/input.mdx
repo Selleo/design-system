@@ -13,53 +13,44 @@ import Description from "../components/Description.astro";
   Below you can find a input component styled with tailwindcss.
 </Description>
 
-<Preview
-  component={Input}
-  iconStart={SearchIcon}
-  iconEnd={SearchIcon}
-  name="Input - Icon Start/End"
-  label="Label"
-/>
-<Preview component={Input} label="Label" name="Input" />
-<Preview
-  component={Input}
-  label="Label"
-  iconStart={SearchIcon}
-  name="Input - Icon Start"
-/>
-<Preview
-  component={Input}
-  label="Label"
-  iconEnd={SearchIcon}
-  name="Input - Icon End"
-/>
-<Preview
-  component={Input}
-  iconStart={SearchIcon}
-  iconEnd={SearchIcon}
-  disabled
-  label="Label"
-  name="Input - Icon Start/End - Disabled"
-/>
-<Preview
-  iconStart={SearchIcon}
-  iconEnd={SearchIcon}
-  component={Input}
-  variant="error"
-  label="Label"
-  name="Input - Icon Start/End - Error"
-/>
-<Preview
-  iconStart={SearchIcon}
-  iconEnd={SearchIcon}
-  component={Input}
-  name="Input - Icon Start/End - No Label"
-/>
-<Preview
-  component={Input}
-  iconStart={SearchIcon}
-  iconEnd={SearchIcon}
-  size="small"
-  label="Label"
-  name="Input Small - Icon Start/End"
-/>
+<Preview name="Input - Icon Start/End">
+  <Input label="Label" iconEnd={SearchIcon} iconStart={SearchIcon} />
+</Preview>
+
+<Preview name="Input">
+  <Input label="Label" />
+</Preview>
+
+<Preview name="Input - Icon Start">
+  <Input label="Label" iconStart={SearchIcon} />
+</Preview>
+
+<Preview name="Input - Icon End">
+  <Input label="Label" iconEnd={SearchIcon} />
+</Preview>
+
+<Preview name="Input - Icon Start/End - Disabled">
+  <Input label="Label" iconEnd={SearchIcon} iconStart={SearchIcon} disabled />
+</Preview>
+
+<Preview name="Input - Icon Start/End - Error">
+  <Input
+    label="Label"
+    iconEnd={SearchIcon}
+    iconStart={SearchIcon}
+    variant="error"
+  />
+</Preview>
+
+<Preview name="Input - Icon Start/End - No Label">
+  <Input iconEnd={SearchIcon} iconStart={SearchIcon} />
+</Preview>
+
+<Preview name="Input Small - Icon Start/End">
+  <Input
+    label="Label"
+    size="small"
+    iconEnd={SearchIcon}
+    iconStart={SearchIcon}
+  />
+</Preview>

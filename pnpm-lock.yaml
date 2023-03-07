@@ -35,6 +35,7 @@ importers:
       astro-icon: ^0.8.0
       html-escaper: ^3.0.3
       preact: ^10.6.5
+      preact-parser: ^1.3.2
       react: ^18.1.0
       react-dom: ^18.1.0
       tailwindcss: ^3.0.24
@@ -55,6 +56,7 @@ importers:
       astro: 1.6.12_@types+node@18.11.10
       astro-icon: 0.8.0
       preact: 10.11.3
+      preact-parser: 1.3.2_preact@10.11.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tailwindcss: 3.2.4_postcss@8.4.21
@@ -5470,6 +5472,14 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /preact-parser/1.3.2_preact@10.11.3:
+    resolution: {integrity: sha512-25CtO2XU30+xgLeHKIVNWWgKrITDMedOJk/GSx8w8b/PD0EXRnv3uD+3rNxjqnUUIJniwgYlNu/kGjWsqeVIXA==}
+    peerDependencies:
+      preact: '>=10'
+    dependencies:
+      preact: 10.11.3
+    dev: false
 
   /preact-render-to-string/5.2.6_preact@10.11.3:
     resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}

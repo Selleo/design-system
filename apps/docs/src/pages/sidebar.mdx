@@ -14,17 +14,14 @@ import PageTemplate from "../components/PageTemplate.astro";
   Below you can find a sidebar component styled with tailwindcss.
 </Description>
 
-<PageTemplate component={Sidebar} name="Sidebar" />
-<Preview
-  component={SidebarItem}
-  icon={DashboardIcon}
-  name="Sidebar Item"
-  label="Dashboard"
-/>
-<Preview
-  component={SidebarItem}
-  icon={DashboardIcon}
-  name="Sidebar Item Active"
-  active
-  label="Dashboard"
-/>
+<PageTemplate name="Sidebar">
+  <Sidebar />
+</PageTemplate>
+
+<Preview name="Sidebar Item">
+  <SidebarItem label="Dashboard" icon={DashboardIcon} />
+</Preview>
+
+<Preview name="Sidebar Item Active">
+  <SidebarItem label="Dashboard" icon={DashboardIcon} active />
+</Preview>

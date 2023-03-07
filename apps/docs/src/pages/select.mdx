@@ -12,5 +12,10 @@ import Description from "../components/Description.astro";
   Below you can find a Select component styled with tailwindcss.
 </Description>
 
-<Preview component={Select} name="Select - Without Label" />
-<Preview component={Select} name="Select - With Label" label="Label" />
+<Preview name="Select - Without Label">
+  <Select />
+</Preview>
+
+<Preview name="Select - With Label" label="Label">
+  <Select label="Label" />
+</Preview>

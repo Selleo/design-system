@@ -13,16 +13,14 @@ import Preview from "../components/Preview.astro";
   Figma design for Dark Mode only - Light Mode improvements awating on designs.
 </Description>
 
-<Preview component={UploadArea} name="Upload Area - default state" />
-<Preview
-  component={UploadArea}
-  variant="filled"
-  label="Filename.jpg"
-  name="Upload Area - filled state"
-/>
-<Preview
-  component={UploadArea}
-  variant="error"
-  label="File weighs too much!"
-  name="Upload Area - error state"
-/>
+<Preview name="Upload Area - default state">
+  <UploadArea />
+</Preview>
+
+<Preview name="Upload Area - filled state">
+  <UploadArea label="Filename.jpg" variant="filled" />
+</Preview>
+
+<Preview name="Upload Area - error state">
+  <UploadArea label="File weighs too much!" variant="error" />
+</Preview>

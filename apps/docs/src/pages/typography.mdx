@@ -4,12 +4,12 @@ description: Sample Typography documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import Preview from '../components/Preview.astro';
-import Description from '../components/Description.astro';
-import { Paragraph } from '@selleo/core/src/Paragraph';
-import { Hero } from '@selleo/core/src/Hero';
-import { Kicker } from '@selleo/core/src/Kicker';
-import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+import { Paragraph } from "@selleo/core/src/Paragraph";
+import { Hero } from "@selleo/core/src/Hero";
+import { Kicker } from "@selleo/core/src/Kicker";
+import { H1, H2, H3, H4, H5, H6 } from "@selleo/core/src/Headers";
 
 <H2>Paragraph</H2>
 
@@ -17,31 +17,25 @@ import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
   Below you can find a Paragraph component styled with tailwindcss.
 </Description>
 
-<Preview
-  component={Paragraph}
-  size="large"
-  weight="regular"
-  name="Large sized paragraph with regular font weight"
-/>
-<Preview
-  component={Paragraph}
-  size="large"
-  weight="bold"
-  name="Large sized paragraph with bold font weight"
-/>
-<Preview
-  component={Paragraph}
-  size="medium"
-  weight="regular"
-  name="Medium sized paragraph with regular font weight"
-/>
-<Preview
-  component={Paragraph}
-  size="medium"
-  weight="bold"
-  name="Medium paragraph with bold font weight"
-/>
-<Preview component={Paragraph} size="small" name="Small paragraph" />
+<Preview>
+  <Paragraph>Large sized paragraph with regular font weight</Paragraph>
+</Preview>
+
+<Preview>
+  <Paragraph weight="bold">Large sized paragraph with bold font weight</Paragraph>
+</Preview>
+
+<Preview>
+  <Paragraph size="medium">Medium sized paragraph with regular font weight</Paragraph>
+</Preview>
+
+<Preview>
+  <Paragraph size="medium" weight="bold">Medium paragraph with bold font weight</Paragraph>
+</Preview>
+
+<Preview>
+  <Paragraph size="small">Small paragraph</Paragraph>
+</Preview>
 
 <H2>Hero</H2>
 
@@ -49,7 +43,9 @@ import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
   Below you can find a Hero component styled with tailwindcss.
 </Description>
 
-<Preview component={Hero} name="Hero" />
+<Preview>
+  <Hero>Hero</Hero>
+</Preview>
 
 <H2>Kicker</H2>
 
@@ -57,7 +53,9 @@ import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
   Below you can find a Kicker component styled with tailwindcss.
 </Description>
 
-<Preview component={Kicker} name="Kicker" />
+<Preview>
+  <Kicker>Kicker</Kicker>
+</Preview>
 
 <H2>Headers</H2>
 
@@ -65,20 +63,26 @@ import { H1, H2, H3, H4, H5, H6 } from '@selleo/core/src/Headers';
   Below you can find headers components styled with tailwindcss.
 </Description>
 
-<Preview component={H1} name="H1" />
-## Header 1
+<Preview>
+  <H1>H1 Header</H1>
+</Preview>
 
-<Preview component={H2} name="H2" />
-### Header 2
+<Preview>
+  <H2>H2 Header</H2>
+</Preview>
 
-<Preview component={H3} name="H3" />
-#### Header 3
+<Preview>
+  <H3>H3 Header</H3>
+</Preview>
 
-<Preview component={H4} name="H4" />
-##### Header 4
+<Preview>
+  <H4>H4 Header</H4>
+</Preview>
 
-<Preview component={H5} name="H5" />
-###### Header 5
+<Preview>
+  <H5>H5 Header</H5>
+</Preview>
 
-<Preview component={H6} name="H6" />
-###### Header 6
+<Preview>
+  <H6>H6 Header</H6>
+</Preview>

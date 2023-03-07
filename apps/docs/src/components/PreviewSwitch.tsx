@@ -38,7 +38,7 @@ export function PreviewSwitch({ HTMLString, reactString, preview }: Props) {
   const reactTabClasses = getCodeTabClasses("react");
 
   const wrapperClasses = cx({
-    "p-3 flex justify-center bg-neutral-200 dark:bg-neutral-800 rounded":
+    "p-3 block bg-neutral-200 dark:bg-neutral-800 rounded":
       selectedTab === "preview",
     "bg-code text-neutral-200 rounded": selectedTab == "html",
     "rounded-l bg-code text-neutral-200": selectedTab === "react",
