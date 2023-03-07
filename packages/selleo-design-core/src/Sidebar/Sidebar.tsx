@@ -11,7 +11,7 @@ import { SidebarItem } from "./SidebarItem";
 
 export function Sidebar() {
   return (
-    <aside class="w-fit h-full static">
+    <aside class="w-fit h-full absolute top-0">
       <div class="p-3 overflow-y-auto bg-white dark:bg-black relative h-full shadow-100">
         <div class="mb-6">
           <SelleoLogo classes="text-black dark:text-white" />
