@@ -1,21 +1,21 @@
 import cx from "classnames";
-import { h } from "preact";
+import { h, FunctionComponent } from "preact";
 
 type ParagraphProps =
-  | ({
+  | {
       size: "large" | "medium";
       weight: "regular" | "bold";
-    } & h.JSX.ElementChildrenAttribute)
-  | ({
+    }
+  | {
       size: "small";
       weight?: never;
-    } & h.JSX.ElementChildrenAttribute);
+    };
 
-export function Paragraph({
+export const Paragraph: FunctionComponent<ParagraphProps> = ({
   size = "large",
   weight = "regular",
   children,
-}: ParagraphProps) {
+}) => {
   const paragraphClassname = cx(
     "dark:text-white font-sans tracking-normal text-neutral-400",
     {
@@ -27,4 +27,4 @@ export function Paragraph({
     }
   );
   return <p class={paragraphClassname}>{children}</p>;
-}
+};

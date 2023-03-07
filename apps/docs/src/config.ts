@@ -47,6 +47,7 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   en: {
     Components: [
+      { text: "App Header", link: "app-header" },
       { text: "Button", link: "button" },
       { text: "Checkbox", link: "checkbox" },
       { text: "Upload Area", link: "upload-area" },

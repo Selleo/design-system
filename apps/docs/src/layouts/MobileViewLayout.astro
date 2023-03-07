@@ -1,0 +1,33 @@
+---
+import HeadCommon from "../components/HeadCommon.astro";
+import HeadSEO from "../components/HeadSEO.astro";
+import * as CONFIG from "../config";
+import type { MarkdownHeading } from "astro";
+import { isDarkTheme } from "../stores";
+
+type Props = {
+  frontmatter: CONFIG.Frontmatter;
+  headings: MarkdownHeading[];
+};
+
+const { frontmatter } = Astro.props as Props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html class="h-full">
+  <head>
+    <HeadCommon />
+    <HeadSEO frontmatter={frontmatter} canonicalUrl={canonicalURL} />
+    <title>
+      {
+        frontmatter.title
+          ? `${frontmatter.title} 🚀 ${CONFIG.SITE.title}`
+          : CONFIG.SITE.title
+      }
+    </title>
+  </head>
+
+  <body class="h-full bg-neutral-200 dark:bg-neutral-800">
+    <slot />
+  </body>
+</html>

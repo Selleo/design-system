@@ -1,5 +1,6 @@
 import type { FunctionalComponent } from "preact";
 import { useState, useEffect } from "preact/hooks";
+import { isDarkTheme } from "../../stores";
 
 const themes = ["light", "dark"];
 
@@ -45,8 +46,10 @@ const ThemeToggle: FunctionalComponent = () => {
   useEffect(() => {
     const root = document.documentElement;
     if (theme === "light") {
+      isDarkTheme.set(true);
       root.classList.remove("dark");
     } else {
+      isDarkTheme.set(false);
       root.classList.add("dark");
     }
   }, [theme]);
