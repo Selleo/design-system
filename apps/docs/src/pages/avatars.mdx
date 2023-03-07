@@ -4,24 +4,18 @@ description: Sample Avatars documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import Preview from '../components/Preview.astro';
-import Description from '../components/Description.astro';
-import { Avatar } from '@selleo/core/src/Avatars';
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+import { Avatar } from "@selleo/core/src/Avatars";
 
 <Description>
   Below you can find an avatar component styled with tailwindcss.
 </Description>
 
-<Preview
-  component={Avatar}
-  size="regular"
-  username="Someone New"
-  name="Avatar with name"
-/>
-<Preview
-  component={Avatar}
-  size="big"
-  username="Someone New"
-  hideName
-  name="Avatar"
-/>
+<Preview name="Avatar with name">
+  <Avatar size="regular" username="Someone New" />
+</Preview>
+
+<Preview name="Avatar">
+  <Avatar size="big" username="Someone New" hideName />
+</Preview>

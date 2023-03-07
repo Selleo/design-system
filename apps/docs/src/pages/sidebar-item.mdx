@@ -13,17 +13,10 @@ import Description from "../components/Description.astro";
   Below you can find a sidebar item component styled with tailwindcss.
 </Description>
 
-<Preview
-  component={SidebarItem}
-  icon={DashboardIcon}
-  name="Sidebar Item"
-  label="Dashboard"
-/>
+<Preview name="Sidebar Item">
+  <SidebarItem label="Dashboard" icon={DashboardIcon} />
+</Preview>
 
-<Preview
-  component={SidebarItem}
-  icon={DashboardIcon}
-  name="Sidebar Item Active"
-  active
-  label="Dashboard"
-/>
+<Preview name="Sidebar Item Active">
+  <SidebarItem label="Dashboard" icon={DashboardIcon} active />
+</Preview>

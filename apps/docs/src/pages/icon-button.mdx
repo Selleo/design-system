@@ -13,79 +13,50 @@ import Description from "../components/Description.astro";
   Below you can find an icon button component styled with tailwindcss.
 </Description>
 
-<Preview component={IconButton} icon={CheckIcon} name="Primary Medium" />
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Medium - Disabled"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Primary Small"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Small - Disabled"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Primary Large"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Large - Disabled"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Medium"
-  variant="ghost"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Medium - Disabled"
-  variant="ghost"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Small"
-  variant="ghost"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Small - Disabled"
-  variant="ghost"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Large"
-  variant="ghost"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Large - Disabled"
-  variant="ghost"
-  size="large"
-/>
+<Preview name="Primary Medium">
+  <IconButton icon={CheckIcon} />
+</Preview>
+
+<Preview name="Primary Medium - Disabled">
+  <IconButton icon={CheckIcon} disabled />
+</Preview>
+
+<Preview name="Primary Small">
+  <IconButton icon={CheckIcon} size="small" />
+</Preview>
+
+<Preview name="Primary Small - Disabled">
+  <IconButton icon={CheckIcon} size="small" disabled />
+</Preview>
+
+<Preview name="Primary Large">
+  <IconButton icon={CheckIcon} size="large" />
+</Preview>
+
+<Preview name="Primary Large - Disabled">
+  <IconButton icon={CheckIcon} size="large" disabled />
+</Preview>
+
+<Preview name="Ghost Medium">
+  <IconButton icon={CheckIcon} variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Medium - Disabled">
+  <IconButton icon={CheckIcon} variant="ghost" disabled />
+</Preview>
+
+<Preview name="Ghost Small">
+  <IconButton icon={CheckIcon} size="small" variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Small - Disabled">
+  <IconButton icon={CheckIcon} size="small" variant="ghost" disabled />
+</Preview>
+
+<Preview name="Ghost Large">
+  <IconButton icon={CheckIcon} size="large" variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Large - Disabled">
+  <IconButton icon={CheckIcon} size="large" variant="ghost" disabled />
+</Preview>

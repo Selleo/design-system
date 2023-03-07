@@ -1,1 +1,1 @@
-export { parseComponent } from './parser';
+export { parseComponent } from "./parser";

@@ -12,16 +12,18 @@ import Description from "../components/Description.astro";
   Below you can find a checkbox component styled with tailwindcss.
 </Description>
 
-<Preview component={Checkbox} name="Checkbox" />
-<Preview component={Checkbox} size="small" name="Checkbox Small" />
-<Preview
-  component={Checkbox}
-  variant="error"
-  name="Checkbox with error state"
-/>
-<Preview
-  component={Checkbox}
-  variant="error"
-  size="small"
-  name="Checkbox Small with error state"
-/>
+<Preview name="Checkbox">
+  <Checkbox />
+</Preview>
+
+<Preview name="Checkbox Small">
+  <Checkbox size="small" />
+</Preview>
+
+<Preview name="Checkbox with error state">
+  <Checkbox variant="error" />
+</Preview>
+
+<Preview name="Checkbox Small with error state">
+  <Checkbox size="small" size="small" />
+</Preview>

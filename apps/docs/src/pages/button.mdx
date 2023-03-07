@@ -4,219 +4,207 @@ description: Sample Button documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Button } from '@selleo/core/src/Button';
-import { PlaceholderIcon } from '@selleo/core/src/icons';
-import { IconButton } from '@selleo/core/src/IconButton';
-import { CheckIcon } from '@selleo/core/src/icons';
-import Preview from '../components/Preview.astro';
-import Description from '../components/Description.astro';
+import { Button } from "@selleo/core/src/Button";
+import { PlaceholderIcon } from "@selleo/core/src/icons";
+import { IconButton } from "@selleo/core/src/IconButton";
+import { CheckIcon } from "@selleo/core/src/icons";
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
 
 <Description>
   Below you can find a button component styled with tailwindcss.
 </Description>
 
-<Preview component={Button} name="Primary" />
-<Preview
-  component={Button}
-  name="Primary - Icon Start"
-  iconStart={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary - Icon End"
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary - Icon Start/End"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-/>
-<Preview component={Button} name="Primary Small" size="small" />
-<Preview
-  component={Button}
-  name="Primary Small - Icon Start"
-  iconStart={PlaceholderIcon}
-  size="small"
-/>
-<Preview
-  component={Button}
-  name="Primary Small - Icon End"
-  iconEnd={PlaceholderIcon}
-  size="small"
-/>
-<Preview
-  component={Button}
-  name="Primary Small - Icon Start/End"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-  size="small"
-/>
-<Preview component={Button} name="Primary Outlined" variant="primaryOutlined" />
-<Preview
-  component={Button}
-  name="Primary Outlined - Icon Start"
-  variant="primaryOutlined"
-  iconStart={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined - Icon End"
-  variant="primaryOutlined"
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined - Icon Start/End"
-  variant="primaryOutlined"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined Small"
-  variant="primaryOutlined"
-  size="small"
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined Small - Icon Start"
-  variant="primaryOutlined"
-  size="small"
-  iconStart={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined Small - Icon End"
-  variant="primaryOutlined"
-  size="small"
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Primary Outlined Small - Icon Start/End"
-  variant="primaryOutlined"
-  size="small"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-/>
-<Preview component={Button} name="Link" variant="link" />
-<Preview
-  component={Button}
-  name="Link - Icon Start"
-  variant="link"
-  iconStart={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Link - Icon End"
-  variant="link"
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Link - Icon Start/End"
-  variant="link"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-/>
-<Preview component={Button} name="Link Small" variant="link" size="small" />
-<Preview
-  component={Button}
-  name="Link Small - Icon Start"
-  variant="link"
-  size="small"
-  iconStart={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Link Small - Icon End"
-  variant="link"
-  size="small"
-  iconEnd={PlaceholderIcon}
-/>
-<Preview
-  component={Button}
-  name="Link Small - Icon Start/End"
-  variant="link"
-  size="small"
-  iconStart={PlaceholderIcon}
-  iconEnd={PlaceholderIcon}
-/>
+<Preview name="Primary">
+  <Button>Text</Button>
+</Preview>
 
-<Preview component={IconButton} icon={CheckIcon} name="Primary Medium" />
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Medium - Disabled"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Primary Small"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Small - Disabled"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Primary Large"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Primary Large - Disabled"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Medium"
-  variant="ghost"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Medium - Disabled"
-  variant="ghost"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Small"
-  variant="ghost"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Small - Disabled"
-  variant="ghost"
-  size="small"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  name="Ghost Large"
-  variant="ghost"
-  size="large"
-/>
-<Preview
-  component={IconButton}
-  icon={CheckIcon}
-  disabled
-  name="Ghost Large - Disabled"
-  variant="ghost"
-  size="large"
-/>
+<Preview name="Primary - Icon Start">
+  <Button iconStart={PlaceholderIcon}>Text</Button>
+</Preview>
+
+<Preview name="Primary - Icon End">
+  <Button iconEnd={PlaceholderIcon}>Text</Button>
+</Preview>
+
+<Preview name="Primary - Icon Start/End">
+  <Button iconStart={PlaceholderIcon} iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Small">
+  <Button size="small">Text</Button>
+</Preview>
+
+<Preview name="Primary Small - Icon Start">
+  <Button size="small" iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Small - Icon End">
+  <Button size="small" iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Small - Icon Start/End">
+  <Button size="small" iconEnd={PlaceholderIcon} iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined">
+  <Button variant="primaryOutlined">Text</Button>
+</Preview>
+
+<Preview name="Primary Outlined - Icon Start">
+  <Button variant="primaryOutlined" iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined - Icon End">
+  <Button variant="primaryOutlined" iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined - Icon Start/End">
+  <Button
+    variant="primaryOutlined"
+    iconStart={PlaceholderIcon}
+    iconEnd={PlaceholderIcon}
+  >
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined Small">
+  <Button variant="primaryOutlined" size="small">
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined Small - Icon Start">
+  <Button variant="primaryOutlined" size="small" iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined Small - Icon End">
+  <Button variant="primaryOutlined" size="small" iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Outlined Small - Icon Start/End">
+  <Button
+    variant="primaryOutlined"
+    size="small"
+    iconStart={PlaceholderIcon}
+    iconEnd={PlaceholderIcon}
+  >
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link">
+  <Button variant="link">Text</Button>
+</Preview>
+
+<Preview name="Link - Icon Start">
+  <Button variant="link" iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link - Icon End">
+  <Button variant="link" iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link - Icon Start/End">
+  <Button variant="link" iconStart={PlaceholderIcon} iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link Small">
+  <Button variant="link" size="small">
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link Small - Icon Start">
+  <Button variant="link" size="small" iconStart={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link Small - Icon End">
+  <Button variant="link" size="small" iconEnd={PlaceholderIcon}>
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Link Small - Icon Start/End">
+  <Button
+    variant="link"
+    size="small"
+    iconEnd={PlaceholderIcon}
+    iconStart={PlaceholderIcon}
+  >
+    Text
+  </Button>
+</Preview>
+
+<Preview name="Primary Medium">
+  <IconButton icon={CheckIcon} />
+</Preview>
+
+<Preview icon={CheckIcon} disabled name="Primary Medium - Disabled">
+  <IconButton icon={CheckIcon} disabled />
+</Preview>
+
+<Preview name="Primary Small">
+  <IconButton icon={CheckIcon} size="small" />
+</Preview>
+
+<Preview name="Primary Small - Disabled">
+  <IconButton icon={CheckIcon} size="small" disabled />
+</Preview>
+
+<Preview name="Primary Large">
+  <IconButton icon={CheckIcon} size="large" />
+</Preview>
+
+<Preview name="Primary Large - Disabled">
+  <IconButton icon={CheckIcon} size="large" disabled />
+</Preview>
+
+<Preview name="Ghost Medium">
+  <IconButton icon={CheckIcon} variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Medium - Disabled">
+  <IconButton icon={CheckIcon} variant="ghost" disabled />
+</Preview>
+
+<Preview name="Ghost Small">
+  <IconButton icon={CheckIcon} size="small" variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Small - Disabled">
+  <IconButton icon={CheckIcon} size="small" variant="ghost" disabled />
+</Preview>
+
+<Preview name="Ghost Large">
+  <IconButton icon={CheckIcon} size="large" variant="ghost" />
+</Preview>
+
+<Preview name="Ghost Large - Disabled">
+  <IconButton icon={CheckIcon} size="large" variant="ghost" disabled />
+</Preview>

@@ -4,21 +4,23 @@ description: Sample Testimonials documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import Preview from '../components/Preview.astro';
-import Description from '../components/Description.astro';
-import { Avatar } from '@selleo/core/src/Avatars';
-import { Testimonial } from '@selleo/core/src/Testimonials';
+import Preview from "../components/Preview.astro";
+import Description from "../components/Description.astro";
+import { Avatar } from "@selleo/core/src/Avatars";
+import { Testimonial } from "@selleo/core/src/Testimonials";
 
 <Description>
   Below you can find a Testimonial component styled with tailwindcss.
 </Description>
 
-<Preview component={Testimonial} variant="big" name="Big testimonial" />
+<Preview name="Big testimonial">
+  <Testimonial variant="big" />
+</Preview>
 
-<Preview component={Testimonial} variant="regular" name="Regular testimonial" />
+<Preview name="Regular testimonial">
+  <Testimonial variant="regular" />
+</Preview>
 
-<Preview
-  component={Testimonial}
-  variant="vertical"
-  name="Vertical testimonial"
-/>
+<Preview name="Vertical testimonial">
+  <Testimonial variant="vertical" />
+</Preview>
