@@ -1,0 +1,19 @@
+---
+import { SIDEBAR } from "../config";
+import { getLanguageFromURL } from "../languages";
+import ShowcaseCard from "./ShowcaseCard.astro";
+
+const currentPage = Astro.url.pathname;
+const langCode = getLanguageFromURL(currentPage);
+const components = SIDEBAR[langCode]?.Components;
+---
+
+<div
+  class="preview grid grid-cols-1 gap-x-1 gap-y-2 sm:grid-cols-2 lg:grid-cols-3"
+>
+  {
+    components.map(({ text, link }) => (
+      <ShowcaseCard title={text} href={link} />
+    ))
+  }
+</div>

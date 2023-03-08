@@ -1,0 +1,27 @@
+---
+import { Picture } from "@astrojs/image/components";
+const { title, href } = Astro.props;
+---
+
+<a
+  class="relative flex flex-col rounded bg-neutral-100 dark:bg-neutral-800 hover:bg-brand-primary-200 dark:hover:bg-brand-primary-600 transition-color duration-300"
+  role="button"
+  href={href}
+>
+  <figure class="px-2 pt-2">
+    <Picture
+      src={import(`../assets/${href}-showcase.png`)}
+      widths={[140, 200, 300, 500]}
+      sizes="100%"
+      alt={`${href} showcase image`}
+      class="rounded"
+    />
+  </figure>
+  <div class="px-2 pb-2 text-sm flex flex-1 flex-col justify-end">
+    <h2
+      class="flex items-center gap-0.5 text-base leading-relaxed font-semibold"
+    >
+      {title || "Sample Title"}
+    </h2>
+  </div>
+</a>
