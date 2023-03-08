@@ -9,13 +9,7 @@ const { title, href } = Astro.props;
   href={href}
 >
   <figure class="px-2 pt-2">
-    <Picture
-      src={import(`../assets/${href}-showcase.png`)}
-      widths={[140, 200, 300, 500]}
-      sizes="100%"
-      alt={`${href} showcase image`}
-      class="rounded"
-    />
+    <img src={`/${href}-showcase.png`} class="rounded" />
   </figure>
   <div class="px-2 pb-2 text-sm flex flex-1 flex-col justify-end">
     <h2
