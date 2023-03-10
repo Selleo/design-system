@@ -4,10 +4,11 @@ description: Sample Input documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Input } from "@selleo/core/src/Input";
-import { SearchIcon } from "@selleo/core/src/icons";
-import Preview from "../components/Preview.astro";
-import Description from "../components/Description.astro";
+import { Input } from '@selleo/core/src/Input';
+import { SearchIcon, ClearIcon } from '@selleo/core/src/icons';
+import { SearchInput } from '@selleo/core/src/SearchInput';
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
 
 <Description>
   Below you can find a input component styled with tailwindcss.
@@ -53,4 +54,12 @@ import Description from "../components/Description.astro";
     iconEnd={SearchIcon}
     iconStart={SearchIcon}
   />
+</Preview>
+
+<Preview name="Search input with label">
+  <SearchInput label="Label" />
+</Preview>
+
+<Preview name="Search input without label">
+  <SearchInput />
 </Preview>

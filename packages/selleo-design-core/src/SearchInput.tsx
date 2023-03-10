@@ -8,7 +8,7 @@ type SearchInputProps = {
 };
 
 export function SearchInput({ label }: SearchInputProps) {
-  const inputWrapperClasses = cx('w-[220px] relative h-[56px]', {
+  const inputWrapperClasses = cx('relative h-[56px]', {
     'mt-1': label,
   });
 
@@ -21,7 +21,7 @@ export function SearchInput({ label }: SearchInputProps) {
   );
 
   return (
-    <label class="w-[220px] text-xs text-neutral-500">
+    <label class="text-xs text-neutral-500">
       {label}
       <div class={inputWrapperClasses}>
         <input class={inputClasses} placeholder="Input placeholder" />
