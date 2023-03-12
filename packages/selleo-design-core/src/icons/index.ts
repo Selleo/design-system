@@ -23,3 +23,4 @@ export * from './LogoWithPassword';
 export * from './LogoWithPasswordWhite';
 export * from './SelleoSignet';
 export * from './SelleoSignetWhite';
+export * from './MenuIcon';
