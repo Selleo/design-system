@@ -1,0 +1,29 @@
+---
+title: Authentication
+description: Sample Authentication documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import {
+  PasswordAuthView,
+  OAuthView,
+  GoogleAuthView,
+} from '@selleo/core/src/Authentication';
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+
+<Description>
+  Below you can find Authentication components styled with tailwindcss.
+</Description>
+
+<Preview name="PasswordAuthView">
+  <PasswordAuthView />
+</Preview>
+
+<Preview name="OAuthView">
+  <OAuthView />
+</Preview>
+
+<Preview name="GoogleAuthView">
+  <GoogleAuthView />
+</Preview>

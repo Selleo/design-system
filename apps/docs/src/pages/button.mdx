@@ -4,12 +4,13 @@ description: Sample Button documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Button } from "@selleo/core/src/Button";
-import { PlaceholderIcon } from "@selleo/core/src/icons";
-import { IconButton } from "@selleo/core/src/IconButton";
-import { CheckIcon } from "@selleo/core/src/icons";
-import Preview from "../components/Preview.astro";
-import Description from "../components/Description.astro";
+import { Button } from '@selleo/core/src/Button';
+import { PlaceholderIcon } from '@selleo/core/src/icons';
+import { IconButton } from '@selleo/core/src/IconButton';
+import { CheckIcon } from '@selleo/core/src/icons';
+import { UploadArea } from '@selleo/core/src/UploadArea';
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
 
 <Description>
   Below you can find a button component styled with tailwindcss.
@@ -207,4 +208,21 @@ import Description from "../components/Description.astro";
 
 <Preview name="Ghost Large - Disabled">
   <IconButton icon={CheckIcon} size="large" variant="ghost" disabled />
+</Preview>
+
+<Description>
+  Below you can find a button component styled with tailwindcss. Created with
+  Figma design for Dark Mode only - Light Mode improvements awating on designs.
+</Description>
+
+<Preview name="Upload Area - default state">
+  <UploadArea />
+</Preview>
+
+<Preview name="Upload Area - filled state">
+  <UploadArea label="Filename.jpg" variant="filled" />
+</Preview>
+
+<Preview name="Upload Area - error state">
+  <UploadArea label="File weighs too much!" variant="error" />
 </Preview>
