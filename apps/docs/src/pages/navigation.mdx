@@ -1,0 +1,25 @@
+---
+title: Navigation
+description: Sample Navigation documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import { Navigation } from '@selleo/core/src/Navigation';
+import Description from '../components/Description.astro';
+import PageTemplate from '../components/PageTemplate.astro';
+
+<Description>
+  Below you can find a Navigation component styled with tailwindcss.
+</Description>
+
+<PageTemplate height="100px" name="Navigation">
+  <Navigation />
+</PageTemplate>
+
+<PageTemplate
+  mobilePath="/mobile/navigation"
+  height="100px"
+  name="Navigation - Mobile"
+>
+  <Navigation />
+</PageTemplate>

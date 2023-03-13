@@ -48,6 +48,7 @@ export const SIDEBAR: Sidebar = {
   en: {
     Brand: [{ text: 'Typography', link: 'brand-typography' }],
     Components: [
+      { text: 'Navigation', link: 'navigation' },
       { text: 'Avatar', link: 'avatars' },
       { text: 'Button', link: 'button' },
       { text: 'Checkbox', link: 'checkbox' },
@@ -63,6 +64,5 @@ export const SIDEBAR: Sidebar = {
       { text: 'Authentication', link: 'authentication' },
       { text: 'Dashboard', link: 'dashboard' },
     ],
-    Navigation: [{ text: 'App Header', link: 'app-header' }],
   },
 };
