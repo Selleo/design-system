@@ -1,5 +1,5 @@
 export const SITE = {
-  title: 'Selleo Design System',
+  title: 'Design',
   description: 'Docs for Selleo Design System',
   defaultLanguage: 'en_US',
 };
@@ -55,15 +55,14 @@ export const SIDEBAR: Sidebar = {
       { text: 'Avatar', link: 'avatars' },
       { text: 'Button', link: 'button' },
       { text: 'Checkbox', link: 'checkbox' },
-      { text: 'Dashboard', link: 'dashboard' },
       { text: 'Input', link: 'input' },
       { text: 'Select', link: 'select' },
       { text: 'Sidebar', link: 'sidebar' },
       { text: 'Tab', link: 'tabs' },
       { text: 'Testimonial', link: 'testimonials' },
-      { text: 'Typography', link: 'typography' },
+      { text: 'Text', link: 'text' },
     ],
-    Views: [
+    'Page Examples': [
       { text: 'Authentication', link: 'authentication' },
       { text: 'Dashboard', link: 'dashboard' },
     ],
