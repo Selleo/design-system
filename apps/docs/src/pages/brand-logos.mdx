@@ -1,0 +1,63 @@
+---
+title: Selleo logo
+description: Sample Selleo logo documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+import { Logo, LogosContainer } from '@selleo/core/src/SelleoLogo';
+import { H2, H3 } from '@selleo/core/src/Headers';
+
+<Description>
+  Below you can find selleo logo components styled with tailwindcss.
+</Description>
+
+<H2>Basic Version</H2>
+
+<H3>Normal logo / white</H3>
+
+<div class="preview bg-neutral-800 p-3">
+  <LogosContainer>
+    <Logo variant="normal" />
+    <Logo variant="normal-white" />
+  </LogosContainer>
+</div>
+
+<H2>Alternative Versions</H2>
+
+<H3>Vertical logo / white</H3>
+
+<div class="preview bg-neutral-800 p-3">
+  <LogosContainer>
+    <Logo variant="vertical" />
+    <Logo variant="vertical-white" />
+  </LogosContainer>
+</div>
+
+<H3>Chromatic logo / white</H3>
+
+<div class="preview bg-neutral-800 p-3">
+  <LogosContainer>
+    <Logo variant="chromatic" />
+    <Logo variant="chromatic-white" />
+  </LogosContainer>
+</div>
+
+<H3>Signet / white</H3>
+
+<div class="preview bg-neutral-800 p-3">
+  <LogosContainer>
+    <Logo variant="signet" />
+    <Logo variant="signet-white" />
+  </LogosContainer>
+</div>
+
+<H3>Logo with password / white</H3>
+
+<div class="preview bg-neutral-800 p-3">
+  <LogosContainer>
+    <Logo variant="normal-password" />
+    <Logo variant="normal-password-white" />
+  </LogosContainer>
+</div>

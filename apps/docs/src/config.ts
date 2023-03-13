@@ -1,15 +1,15 @@
 export const SITE = {
-  title: "Selleo Design System",
-  description: "Docs for Selleo Design System",
-  defaultLanguage: "en_US",
+  title: 'Selleo Design System',
+  description: 'Docs for Selleo Design System',
+  defaultLanguage: 'en_US',
 };
 
 export const OPEN_GRAPH = {
   image: {
-    src: "https://github.com/Selleo/design-system/blob/main/apps/docs/src/assets/logo.png?raw=true",
-    alt: "selleo logo on a dark background",
+    src: 'https://github.com/Selleo/design-system/blob/main/apps/docs/src/assets/logo.png?raw=true',
+    alt: 'selleo logo on a dark background',
   },
-  twitter: "selleo",
+  twitter: 'selleo',
 };
 
 // This is the type of the frontmatter you put in the docs markdown files.
@@ -18,13 +18,13 @@ export type Frontmatter = {
   description: string;
   layout: string;
   image?: { src: string; alt: string };
-  dir?: "ltr" | "rtl";
+  dir?: 'ltr' | 'rtl';
   ogLocale?: string;
   lang?: string;
 };
 
 export const KNOWN_LANGUAGES = {
-  English: "en",
+  English: 'en',
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
@@ -34,9 +34,9 @@ export const COMMUNITY_INVITE_URL = `https://selleo.com/contact`;
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
-  indexName: "XXXXXXXXXX",
-  appId: "XXXXXXXXXX",
-  apiKey: "XXXXXXXXXX",
+  indexName: 'XXXXXXXXXX',
+  appId: 'XXXXXXXXXX',
+  apiKey: 'XXXXXXXXXX',
 };
 
 export type Sidebar = Record<
@@ -46,20 +46,21 @@ export type Sidebar = Record<
 
 export const SIDEBAR: Sidebar = {
   en: {
+    Brand: [{ text: 'Logo', link: 'brand-logos' }],
     Components: [
-      { text: "App Header", link: "app-header" },
-      { text: "Avatars", link: "avatars" },
-      { text: "Button", link: "button" },
-      { text: "Checkbox", link: "checkbox" },
-      { text: "Dashboard", link: "dashboard" },
-      { text: "Input", link: "input" },
-      { text: "Select", link: "select" },
-      { text: "Sidebar", link: "sidebar" },
-      { text: "Tabs", link: "tabs" },
-      { text: "Testimonials", link: "testimonials" },
-      { text: "Typography", link: "typography" },
-      { text: "Upload Area", link: "upload-area" },
+      { text: 'App Header', link: 'app-header' },
+      { text: 'Avatars', link: 'avatars' },
+      { text: 'Button', link: 'button' },
+      { text: 'Checkbox', link: 'checkbox' },
+      { text: 'Dashboard', link: 'dashboard' },
+      { text: 'Input', link: 'input' },
+      { text: 'Select', link: 'select' },
+      { text: 'Sidebar', link: 'sidebar' },
+      { text: 'Tabs', link: 'tabs' },
+      { text: 'Testimonials', link: 'testimonials' },
+      { text: 'Typography', link: 'typography' },
+      { text: 'Upload Area', link: 'upload-area' },
     ],
-    Views: [{ text: "Login View", link: "login-view" }],
+    Views: [{ text: 'Login View', link: 'login-view' }],
   },
 };
