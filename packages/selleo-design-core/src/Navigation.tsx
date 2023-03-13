@@ -1,9 +1,10 @@
 import { h } from 'preact';
+
 import { Avatar } from './Avatars';
 import { MenuIcon, SelleoLogo } from './icons';
 import { CaretDownIcon } from './icons/CaretDownIcon';
 
-export function AppHeader() {
+export function Navigation() {
   return (
     <header class="w-full h-fit static bg-white dark:bg-black flex justify-between items-center">
       <div class="px-4 text-black dark:text-white hidden lg:block">

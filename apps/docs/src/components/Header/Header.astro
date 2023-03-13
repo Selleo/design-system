@@ -1,11 +1,11 @@
 ---
-import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
-import * as CONFIG from "../../config";
-import SelleoLogo from "./SelleoLogo.astro";
-import SkipToContent from "./SkipToContent.astro";
-import SidebarToggle from "./SidebarToggle";
-import LanguageSelect from "./LanguageSelect";
-import Search from "./Search";
+import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages';
+import * as CONFIG from '../../config';
+import SelleoLogo from './SelleoLogo.astro';
+import SkipToContent from './SkipToContent.astro';
+import SidebarToggle from './SidebarToggle';
+import LanguageSelect from './LanguageSelect';
+import Search from './Search';
 
 type Props = {
   currentPage: string;
@@ -37,7 +37,7 @@ const lang = getLanguageFromURL(currentPage);
         <h1
           class="hidden mb-2 font-black leading-none md:block md:m-0 md:text-lg md:text-inherit md:font-semibold"
         >
-          {CONFIG.SITE.title ?? "Documentation"}
+          {CONFIG.SITE.title ?? 'Documentation'}
         </h1>
       </a>
     </div>
@@ -47,10 +47,14 @@ const lang = getLanguageFromURL(currentPage);
         <LanguageSelect lang={lang} client:idle />
       )
     }
+    {
+      /*     
     <div
       class="flex relative z-10 grow pr-[0.7rem] max-w-[200px] md:max-w-[400px]"
     >
       <Search client:idle />
-    </div>
+    </div> 
+    */
+    }
   </nav>
 </header>

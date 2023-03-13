@@ -48,19 +48,21 @@ export const SIDEBAR: Sidebar = {
   en: {
     Brand: [{ text: 'Typography', link: 'brand-typography' }],
     Components: [
-      { text: 'App Header', link: 'app-header' },
-      { text: 'Avatars', link: 'avatars' },
+      { text: 'Navigation', link: 'navigation' },
+      { text: 'Avatar', link: 'avatars' },
       { text: 'Button', link: 'button' },
       { text: 'Checkbox', link: 'checkbox' },
       { text: 'Dashboard', link: 'dashboard' },
       { text: 'Input', link: 'input' },
       { text: 'Select', link: 'select' },
       { text: 'Sidebar', link: 'sidebar' },
-      { text: 'Tabs', link: 'tabs' },
-      { text: 'Testimonials', link: 'testimonials' },
+      { text: 'Tab', link: 'tabs' },
+      { text: 'Testimonial', link: 'testimonials' },
       { text: 'Typography', link: 'typography' },
-      { text: 'Upload Area', link: 'upload-area' },
     ],
-    Views: [{ text: 'Login View', link: 'login-view' }],
+    Views: [
+      { text: 'Authentication', link: 'authentication' },
+      { text: 'Dashboard', link: 'dashboard' },
+    ],
   },
 };
