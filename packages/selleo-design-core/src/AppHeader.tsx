@@ -1,7 +1,7 @@
-import { Fragment, h } from "preact";
-import { Avatar } from "./Avatars";
-import { MenuIcon, SelleoLogo } from "./icons";
-import { CaretDownIcon } from "./icons/CaretDownIcon";
+import { h } from 'preact';
+import { Avatar } from './Avatars';
+import { MenuIcon, SelleoLogo } from './icons';
+import { CaretDownIcon } from './icons/CaretDownIcon';
 
 export function AppHeader() {
   return (
