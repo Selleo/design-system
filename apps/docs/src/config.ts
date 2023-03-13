@@ -46,7 +46,7 @@ export type Sidebar = Record<
 
 export const SIDEBAR: Sidebar = {
   en: {
-    Brand: [{ text: 'Logos', link: 'brand-logos' }],
+    Brand: [{ text: 'Logo', link: 'brand-logos' }],
     Components: [
       { text: 'App Header', link: 'app-header' },
       { text: 'Avatars', link: 'avatars' },
