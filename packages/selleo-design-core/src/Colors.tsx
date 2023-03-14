@@ -121,8 +121,7 @@ export const colorsInfo = {
     {
       title: 'hero.overlay',
       description: 'HEX #2F3033 | hsl(225, 4, 19) 70%',
-      class:
-        'bg-neutral-hero-overlay [&_p]:text-black [&_h4]:text-black dark:[&_p]:text-white dark:[&_h4]:text-white mb-3',
+      class: 'bg-neutral-hero-overlay [&_p]:text-white [&_h4]:text-white mb-3',
     },
   ],
   states: [
