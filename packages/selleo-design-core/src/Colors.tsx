@@ -133,8 +133,7 @@ export const colorsInfo = {
     {
       title: 'transparent',
       description: 'HEX #000000 | hsl(0, 0, 0)  0%',
-      class:
-        '[&_p]:text-black [&_h4]:text-black dark:[&_h4]:text-white border-[1px] border-neutral-200 mb-3',
+      class: 'border-[1px] border-neutral-200 mb-3',
     },
   ],
 };
