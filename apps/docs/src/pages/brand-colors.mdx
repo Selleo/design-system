@@ -1,0 +1,54 @@
+---
+title: Color
+description: Sample Color documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import {
+  ColorWrapper,
+  ColorsWrapper,
+  colorsInfo,
+} from '@selleo/core/src/Colors';
+import { H2 } from '@selleo/core/src/Headers';
+import Preview from '../components/Preview.astro';
+import Description from '../components/Description.astro';
+
+<Description>
+  Below you can find our brand colors styled with tailwindcss.
+</Description>
+
+<H2>Brand Colors</H2>
+
+<div class="preview">
+
+<ColorsWrapper
+  items={colorsInfo.brand.primary}
+  withHero
+  isHorizontal
+  class="mb-7 mt-3"
+/>
+
+<ColorsWrapper
+  items={colorsInfo.brand.secondary}
+  withHero
+  isHorizontal
+  class="mb-7 mt-3"
+/>
+
+<H2>Neutral Colors</H2>
+
+<ColorsWrapper
+  items={colorsInfo.neutral}
+  isHorizontal={false}
+  class="mb-7 mt-3"
+/>
+
+<H2>States Colors</H2>
+
+<ColorsWrapper
+  items={colorsInfo.states}
+  isHorizontal={false}
+  class="mb-7 mt-3"
+/>
+
+</div>

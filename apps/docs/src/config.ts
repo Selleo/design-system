@@ -49,6 +49,7 @@ export const SIDEBAR: Sidebar = {
     Brand: [
       { text: 'Typography', link: 'brand-typography' },
       { text: 'Logo', link: 'brand-logos' },
+      { text: 'Color', link: 'brand-colors' },
     ],
     Components: [
       { text: 'Navigation', link: 'navigation' },
