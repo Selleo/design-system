@@ -1,13 +1,13 @@
 ---
-import { getLanguageFromURL } from "../../languages";
-import { SIDEBAR } from "../../config";
+import { getLanguageFromURL } from '../../languages';
+import { SIDEBAR } from '../../config';
 
 type Props = {
   currentPage: string;
 };
 
 const { currentPage } = Astro.props as Props;
-const currentPageMatch = currentPage.endsWith("/")
+const currentPageMatch = currentPage.endsWith('/')
   ? currentPage.slice(1, -1)
   : currentPage.slice(1);
 const langCode = getLanguageFromURL(currentPage);
@@ -22,7 +22,7 @@ const sidebar = SIDEBAR[langCode];
       Object.entries(sidebar).map(([header, children]) => (
         <li class="mt-4 first:pt-4 first:mt-0 mt-4 last:pb-4 last:mb-6">
           <div>
-            <h2 class="mb-2 font-bold leading-none text-xl">{header}</h2>
+            <h2 class="mb-2 font-bold leading-none text-lg">{header}</h2>
             <ul class="list-none p-0">
               {children.map((child) => {
                 const url = Astro.site?.pathname + child.link;
@@ -31,12 +31,12 @@ const sidebar = SIDEBAR[langCode];
                     <a
                       class={`block text-sm m-[1px] py-[0.3rem] px-2 text-inherit hover:no-underline focus:no-underline focus-visible:no-underline hover:bg-theme-gray-950 dark:hover:bg-theme-gray-400 focus-visible:bg-theme-gray-950 dark:focus-visible:bg-theme-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white ${
                         currentPageMatch === child.link
-                          ? "text-theme-accent dark:text-white bg-theme-accent/15 font-semibold"
-                          : ""
+                          ? 'text-theme-accent dark:text-white bg-theme-accent/15 font-semibold'
+                          : ''
                       }`}
                       href={url}
                       aria-current={
-                        currentPageMatch === child.link ? "page" : false
+                        currentPageMatch === child.link ? 'page' : false
                       }
                     >
                       {child.text}
@@ -53,10 +53,10 @@ const sidebar = SIDEBAR[langCode];
 </nav>
 
 <script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener('DOMContentLoaded', () => {
     var target = document.querySelector('[aria-current="page"]');
     if (target && target.offsetTop > window.innerHeight - 100) {
-      document.querySelector(".nav-groups").scrollTop = target.offsetTop;
+      document.querySelector('.nav-groups').scrollTop = target.offsetTop;
     }
   });
 </script>

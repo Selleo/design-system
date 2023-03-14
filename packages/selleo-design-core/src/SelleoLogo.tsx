@@ -56,6 +56,8 @@ export function Logo({ variant }: LogoProps) {
 
 export const LogosContainer: FunctionComponent = ({ children }) => {
   return (
-    <div class="flex justify-evenly items-center flex-1/2">{children}</div>
+    <div class="flex justify-evenly items-center flex-1/2 gap-2">
+      {children}
+    </div>
   );
 };
