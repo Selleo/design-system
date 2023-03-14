@@ -13,7 +13,7 @@ export function SearchInput({ label }: SearchInputProps) {
   });
 
   const inputClasses = cx(
-    'w-full h-[56px] pr-[48px] pl-2 bg-white text-neutral-600 hover:placeholder:text-neutral-600 focus:placeholder:text-neutral-600 border-[1px] rounded-[4px] border-neutral-200 outline-brand-primary-500 hover:border-neutral-300 peer text-xs',
+    'w-full h-[56px] pr-[48px] pl-2 bg-white outline-none text-neutral-600 hover:placeholder:text-neutral-600 focus:placeholder:text-neutral-600 border-[1px] rounded-[4px] border-neutral-200 focus-visible:border-brand-primary-500 hover:border-neutral-300 peer text-xs',
     {
       'text-sm py-2': !label,
       'py-[21px]': label,
