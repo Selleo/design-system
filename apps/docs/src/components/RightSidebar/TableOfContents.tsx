@@ -84,9 +84,12 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 
   return (
     <>
-      {/* <h2 id={onThisPageID} className="heading mb-1 font-bold leading-none text-sm font-bold py-[0.1rem] px-2 uppercase">
+      {/* <h2
+        id={onThisPageID}
+        className="heading mb-1 font-bold leading-none text-sm font-bold py-[0.1rem] px-2 uppercase"
+      >
         On this page
-      </h2> */}
+      </h2>
       <ul class="list-none p-0" ref={toc}>
         {headings
           .filter(({ depth }) => depth > 1 && depth <= 4)
@@ -113,7 +116,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
               </a>
             </li>
           ))}
-      </ul>
+      </ul> */}
     </>
   );
 };
