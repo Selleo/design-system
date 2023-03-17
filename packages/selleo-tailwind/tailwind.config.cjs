@@ -91,6 +91,48 @@ module.exports = {
           },
         },
       },
+      ringColor: {
+        brand: {
+          primary: {
+            100: '#fff8f5',
+            200: '#ffeae0',
+            400: '#ff905d',
+            500: '#ff6d2a', //DEFAULT
+            600: '#e25718',
+          },
+          secondary: {
+            100: '#F3F8FC',
+            200: '#DFEBF6',
+            500: '#5c99d2', //DEFAULT
+            600: '#3871a5',
+          },
+        },
+        white: '#ffffff',
+        black: '#2F3033',
+        danger: '#E81B2F',
+        neutral: {
+          100: '#f4f5f5',
+          200: '#eaeaeb',
+          300: '#bfc0c4',
+          400: '#95979d',
+          500: '#696b72',
+          600: '#4c4d52',
+          hero: {
+            overlay: '#2F3033',
+          },
+        },
+        theme: {
+          dark: '#1f2937',
+          accent: '#3895ff',
+          gray: {
+            100: '#16191d',
+            400: '#586474',
+            800: '#c5cbd3',
+            900: '#e2e5e9',
+            950: '#f0f2f4',
+          },
+        },
+      },
       letterSpacing: {
         none: '0',
         normal: '0.01em',
