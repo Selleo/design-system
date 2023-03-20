@@ -2,7 +2,7 @@ import { Fragment, h, VNode } from 'preact';
 import render from 'preact-render-to-string';
 import { parse } from 'preact-parser';
 
-const parseToReact = (componentAsString: string) => {
+export const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
 };
 

@@ -75,6 +75,7 @@ export const SIDEBAR: Sidebar = {
     'Page Examples': [
       { text: 'Authentication', link: 'authentication' },
       { text: 'Dashboard', link: 'dashboard' },
+      { text: 'Icon', link: 'icons' },
     ],
   },
 };

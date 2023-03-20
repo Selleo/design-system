@@ -1,6 +1,6 @@
-import { h } from "preact";
+import { h } from 'preact';
 
-export function UsersIcon() {
+export function UsersIcon(props: h.JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ export function UsersIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      {...props}
     >
       <circle
         cx="12"

@@ -1,6 +1,6 @@
-import { h } from "preact";
+import { h } from 'preact';
 
-export function PropertiesIcon() {
+export function PropertiesIcon(props: h.JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ export function PropertiesIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      {...props}
     >
       <path
         d="M19.5031 9.99916V5.42526C19.5031 4.08375 18.4156 2.99625 17.0741 2.99625H5.42523C4.08372 2.99625 2.99622 4.08375 2.99622 5.42526V13.0004C2.99622 14.3419 4.08372 15.4294 5.42523 15.4294H13.0004"

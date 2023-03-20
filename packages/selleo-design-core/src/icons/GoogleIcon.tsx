@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-export const GoogleIcon = () => {
+export const GoogleIcon = (props: h.JSX.SVGAttributes<SVGSVGElement>) => {
   return (
     <svg
       width="21"
@@ -8,6 +8,7 @@ export const GoogleIcon = () => {
       viewBox="0 0 21 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g clip-path="url(#clip0_2891_28864)">
         <path
