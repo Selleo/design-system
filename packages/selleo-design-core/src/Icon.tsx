@@ -141,7 +141,7 @@ export function Icon({ component, name }: IconProps) {
           {name}
         </p>
         {isOpen && (
-          <div class="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] mx-auto py-3 px-3 lg:px-7 lg:py-5 w-96 shadow-lg rounded-md bg-neutral-hero-overlay z-30 min-w-[220px]">
+          <div class="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] mx-auto py-3 px-3 lg:px-7 lg:py-5 w-96 shadow-lg rounded-md bg-neutral-hero-overlay z-30 min-w-[220px] cursor-auto">
             <ClearIcon
               class="absolute top-[-1px] right-[-1px] cursor-pointer"
               width={12}
