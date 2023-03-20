@@ -103,7 +103,7 @@ export function Icon({ component, name }: IconProps) {
     navigator.clipboard.writeText(code);
   };
 
-  const handleCopy = (format: 'react' | 'html') =>
+  const handleCopy = (variant: 'react' | 'html') =>
     navigator.permissions
       .query({ name: 'clipboard-write' as any })
       .then((result) => {
@@ -114,7 +114,7 @@ export function Icon({ component, name }: IconProps) {
           });
 
           const codeToCopy =
-            format === 'html' ? HTMLString : parseToReact(HTMLString);
+            variant === 'html' ? HTMLString : parseToReact(HTMLString);
 
           return updateClipboard(codeToCopy);
         }
