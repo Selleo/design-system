@@ -39,9 +39,12 @@ export const ALGOLIA = {
   apiKey: 'XXXXXXXXXX',
 };
 
+type Link = { text: string; link: string };
+type Submenu = { subTitle: string; sublinks: Link[] };
+
 export type Sidebar = Record<
   typeof KNOWN_LANGUAGE_CODES[number],
-  Record<string, { text: string; link: string }[]>
+  Record<string, (Link | Submenu)[]>
 >;
 
 export const SIDEBAR: Sidebar = {
@@ -52,16 +55,16 @@ export const SIDEBAR: Sidebar = {
       { text: 'Color', link: 'brand-colors' },
     ],
     Components: [
-      { text: 'Navigation', link: 'navigation' },
-      { text: 'Avatar', link: 'avatars' },
-      { text: 'Button', link: 'button' },
-      { text: 'Checkbox', link: 'checkbox' },
-      { text: 'Input', link: 'input' },
-      { text: 'Select', link: 'select' },
-      { text: 'Sidebar', link: 'sidebar' },
-      { text: 'Tab', link: 'tabs' },
-      { text: 'Testimonial', link: 'testimonials' },
-      { text: 'Text', link: 'text' },
+      {
+        subTitle: 'Form',
+        sublinks: [
+          { text: 'Input', link: 'input' },
+          { text: 'Checkbox', link: 'checkbox' },
+          { text: 'Select', link: 'select' },
+        ],
+      },
+      { text: 'Authentication', link: 'authentication' },
+      { text: 'Dashboard', link: 'dashboard' },
     ],
     'Page Examples': [
       { text: 'Authentication', link: 'authentication' },

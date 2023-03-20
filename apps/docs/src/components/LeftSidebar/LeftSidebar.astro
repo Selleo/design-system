@@ -1,6 +1,7 @@
 ---
 import { getLanguageFromURL } from '../../languages';
 import { SIDEBAR } from '../../config';
+import { CaretDownIcon } from '@selleo/core/src/icons';
 
 type Props = {
   currentPage: string;
@@ -25,7 +26,46 @@ const sidebar = SIDEBAR[langCode];
             <h2 class="mb-2 font-bold leading-none text-lg">{header}</h2>
             <ul class="list-none p-0">
               {children.map((child) => {
+                if (child.sublinks) {
+                  return (
+                    <div>
+                      <h2 class="flex leading-none text-md ml-2 font-black mb-1 cursor-pointer w-full subTitle">
+                        {child.subTitle}
+                        <div class="caret-icon z-[-1]">
+                          <CaretDownIcon width={24} height={24} />
+                        </div>
+                      </h2>
+                      <div class="hidden">
+                        {child.sublinks.map((sublink) => {
+                          const sublinkUrl =
+                            Astro.site?.pathname + sublink.link;
+                          return (
+                            <li>
+                              <a
+                                class={`block text-sm m-[1px] py-[0.3rem] px-5 text-inherit hover:no-underline focus:no-underline focus-visible:no-underline hover:bg-theme-gray-950 dark:hover:bg-theme-gray-400 focus-visible:bg-theme-gray-950 dark:focus-visible:bg-theme-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white ${
+                                  currentPageMatch === sublink.link
+                                    ? 'text-theme-accent dark:text-white bg-theme-accent/15 font-semibold'
+                                    : ''
+                                }`}
+                                href={sublinkUrl}
+                                aria-current={
+                                  currentPageMatch === sublink.link
+                                    ? 'page'
+                                    : false
+                                }
+                              >
+                                {sublink.text}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
                 const url = Astro.site?.pathname + child.link;
+
                 return (
                   <li>
                     <a
@@ -58,5 +98,62 @@ const sidebar = SIDEBAR[langCode];
     if (target && target.offsetTop > window.innerHeight - 100) {
       document.querySelector('.nav-groups').scrollTop = target.offsetTop;
     }
+
+    const subTitles = document.querySelectorAll('.subTitle');
+
+    subTitles.forEach((title) =>
+      title.addEventListener('click', (e) => {
+        e.target.nextElementSibling.classList.toggle('hidden');
+        const iconParent = document.querySelector('.caret-icon');
+
+        iconParent.innerHTML = e.target.nextElementSibling.classList.contains(
+          'hidden'
+        )
+          ? `<svg
+          width="24"
+        height="24"
+            xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M12 14L15 10.9999"
+        stroke="white"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M9 11L12 14"
+        stroke="white"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>`
+          : `<svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 11L9 14.0001"
+        stroke="white"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15 14L12 11"
+        stroke="white"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>`;
+      })
+    );
   });
 </script>
