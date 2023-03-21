@@ -26,6 +26,10 @@ const sidebar = SIDEBAR[langCode];
             <h2 class="mb-2 font-bold leading-none text-lg">{header}</h2>
             <ul class="list-none p-0">
               {children.map((child) => {
+                const shouldBeExpanded = child.sublinks?.some(
+                  ({ link }) => link === currentPageMatch
+                );
+
                 if (child.sublinks) {
                   return (
                     <div>
@@ -35,7 +39,7 @@ const sidebar = SIDEBAR[langCode];
                           <CaretDownIcon width={24} height={24} />
                         </div>
                       </h2>
-                      <div class="hidden">
+                      <div class={shouldBeExpanded ? '' : 'hidden'}>
                         {child.sublinks.map((sublink) => {
                           const sublinkUrl =
                             Astro.site?.pathname + sublink.link;
