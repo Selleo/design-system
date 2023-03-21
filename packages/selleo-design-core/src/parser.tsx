@@ -16,11 +16,12 @@ const buildComponent = (html: string) => (): VNode => {
 export const parseComponent = (html: string) => {
   const Component = buildComponent(html);
   const HTMLString = render(<Component />, null, { pretty: true });
-  const HTMLStringResult = HTMLString.replaceAll(/><\/input>|><\/img>/g, '>');
   const ReactString = parseToReact(HTMLString);
+  const HTMLStringResult = HTMLString.replaceAll(/><\/input>|><\/img>/g, '>');
+  const ReactStringResult = ReactString.replaceAll(/><\/input>|><\/img>/g, '>');
 
   return {
     HTMLString: HTMLStringResult,
-    ReactString,
+    ReactString: ReactStringResult,
   };
 };
