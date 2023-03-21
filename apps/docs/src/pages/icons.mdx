@@ -4,16 +4,12 @@ description: Sample Icon documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import { Icons, iconsData } from '@selleo/core/src/Icon';
-import Icon from '../components/Icon.astro';
-import Preview from '../components/Preview.astro';
+import { Icons } from '@selleo/core/src/Icon';
+import IconPage from '../components/IconPage.astro';
 import Description from '../components/Description.astro';
-import CodeWithCopy from '../components/CodeWithCopy.astro';
 
 <Description>
   Below you can find an Icon components styled with tailwindcss.
 </Description>
 
-<Icon>
-  <Icons items={iconsData} />
-</Icon>
+<IconPage></IconPage>
