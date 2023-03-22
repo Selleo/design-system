@@ -40,7 +40,7 @@ export const ALGOLIA = {
 };
 
 type Link = { text: string; link: string };
-type Submenu = { subTitle: string; sublinks: Link[] };
+type Submenu = { text: string; sublinks: Link[] };
 
 export type Sidebar = Record<
   typeof KNOWN_LANGUAGE_CODES[number],
@@ -56,7 +56,7 @@ export const SIDEBAR: Sidebar = {
     ],
     Components: [
       {
-        subTitle: 'Form',
+        text: 'Form',
         sublinks: [
           { text: 'Input', link: 'input' },
           { text: 'Checkbox', link: 'checkbox' },
