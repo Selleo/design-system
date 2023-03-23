@@ -1,1 +1,1 @@
-export { parseComponent } from "./parser";
+export { parseComponent, parseComponentWithoutAstro } from "./parser";

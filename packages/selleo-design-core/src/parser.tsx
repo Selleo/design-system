@@ -1,6 +1,6 @@
-import { Fragment, h, VNode } from 'preact';
-import render from 'preact-render-to-string';
-import { parse } from 'preact-parser';
+import { Fragment, h, VNode } from "preact";
+import render from "preact-render-to-string";
+import { parse } from "preact-parser";
 
 export const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
@@ -37,4 +37,4 @@ export const parseComponentWithoutAstro = (Component: any) => {
     HTMLString,
     ReactString,
   };
-}
+};
