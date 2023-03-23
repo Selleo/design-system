@@ -1,21 +1,24 @@
 import { h } from 'preact';
 import type { StateUpdater } from 'preact/hooks';
-import render from 'preact-render-to-string';
 import classNames from 'classnames';
 
-import { parseToReact } from '@selleo/core/src/parser';
 import { ClearIcon } from '@selleo/core/src/icons';
 import { Button } from '@selleo/core/src/Button';
 import { H4 } from '@selleo/core/src/Headers';
-import { iconsData } from './Icons';
+import type { IconProps } from './Icons';
 
 type IconModalProps = {
   name: string;
   setShownIconName: StateUpdater<string | null>;
+  iconsList: IconProps[];
 };
 
-export const IconModal = ({ name, setShownIconName }: IconModalProps) => {
-  const icon = iconsData.find((icon) => icon.name === name);
+export const IconModal = ({
+  name,
+  setShownIconName,
+  iconsList,
+}: IconModalProps) => {
+  const shownIcon = iconsList.find((icon) => icon.name === name);
 
   const updateClipboard = (code: string) => {
     navigator.clipboard.writeText(code);
@@ -26,13 +29,8 @@ export const IconModal = ({ name, setShownIconName }: IconModalProps) => {
       .query({ name: 'clipboard-write' as any })
       .then((result) => {
         if (result.state === 'granted' || result.state === 'prompt') {
-          const Component = icon!.component;
-          const HTMLString = render(Component, {
-            pretty: true,
-          });
-
           const codeToCopy =
-            variant === 'html' ? HTMLString : parseToReact(HTMLString);
+            variant === 'html' ? shownIcon!.htmlString : shownIcon!.reactString;
 
           return updateClipboard(codeToCopy);
         }
@@ -61,7 +59,7 @@ export const IconModal = ({ name, setShownIconName }: IconModalProps) => {
         </div>
         <div class="mt-3 text-center">
           <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full">
-            {icon?.component}
+            {shownIcon?.component}
           </div>
           <H4>{name}</H4>
           <div class="flex items-center text-white z-2 pt-5">

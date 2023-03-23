@@ -8,8 +8,89 @@ import { Icons } from '@selleo/core/src/Icon';
 import IconPage from '../components/IconPage.astro';
 import Description from '../components/Description.astro';
 
+import {
+  BookingDeskIcon,
+  BookingRoomIcon,
+  CheckIcon,
+  ClearIcon,
+  DashboardIcon,
+  FacebookIcon,
+  GithubIcon,
+  GoogleIcon,
+  MenuIcon,
+  PlaceholderIcon,
+  PropertiesIcon,
+  SearchIcon,
+  TwitterIcon,
+  UsersIcon,
+  CaretDownIcon,
+} from '@selleo/core/src/icons';
+
 <Description>
   Below you can find an Icon components styled with tailwindcss.
 </Description>
 
-<IconPage></IconPage>
+<IconPage
+  iconsData={[
+    {
+      component: <BookingDeskIcon />,
+      name: 'booking-desk-icon',
+    },
+    {
+      component: <BookingRoomIcon />,
+      name: 'booking-room-icon',
+    },
+    {
+      component: <CaretDownIcon />,
+      name: 'caret-down-icon',
+    },
+    {
+      component: <CheckIcon />,
+      name: 'check-icon',
+    },
+    {
+      component: <ClearIcon />,
+      name: 'clear-icon',
+    },
+    {
+      component: <DashboardIcon />,
+      name: 'dashboard-icon',
+    },
+    {
+      component: <FacebookIcon />,
+      name: 'facebook-icon',
+    },
+    {
+      component: <GithubIcon />,
+      name: 'github-icon',
+    },
+    {
+      component: <GoogleIcon />,
+      name: 'google-icon',
+    },
+    {
+      component: <MenuIcon />,
+      name: 'menu-icon',
+    },
+    {
+      component: <PlaceholderIcon />,
+      name: 'placeholder-icon',
+    },
+    {
+      component: <PropertiesIcon />,
+      name: 'properties-icon',
+    },
+    {
+      component: <SearchIcon />,
+      name: 'search-icon',
+    },
+    {
+      component: <TwitterIcon />,
+      name: 'twitter-icon',
+    },
+    {
+      component: <UsersIcon />,
+      name: 'users-icon',
+    },
+  ]}
+></IconPage>
