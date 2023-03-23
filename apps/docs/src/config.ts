@@ -71,11 +71,11 @@ export const SIDEBAR: Sidebar = {
       { text: 'Tab', link: 'tabs' },
       { text: 'Testimonial', link: 'testimonials' },
       { text: 'Text', link: 'text' },
+      { text: 'Icon', link: 'icons' },
     ],
     'Page Examples': [
       { text: 'Authentication', link: 'authentication' },
       { text: 'Dashboard', link: 'dashboard' },
-      { text: 'Icon', link: 'icons' },
     ],
   },
 };

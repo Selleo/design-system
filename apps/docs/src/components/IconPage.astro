@@ -1,13 +1,11 @@
 ---
-import { Icons } from "./Icons/Icons";
-import { parseComponentWithoutAstro } from "@selleo/core";
+import { Icons } from './Icons/Icons';
+import { parseComponentWithoutAstro } from '@selleo/core';
 
 const { iconsData } = Astro.props;
 
 const iconsList = iconsData.map(({ name, component: Component }: any) => {
   const { HTMLString, ReactString } = parseComponentWithoutAstro(Component);
-
-  console.log({ HTMLString, ReactString });
 
   return {
     name,

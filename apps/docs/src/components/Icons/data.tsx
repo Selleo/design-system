@@ -21,63 +21,63 @@ import {
 const iconsData = [
   {
     component: <BookingDeskIcon class="h-[24px] w-[24px]" />,
-    name: 'booking-desk-icon',
+    name: 'booking-desk',
   },
   {
     component: <BookingRoomIcon class="h-[24px] w-[24px]" />,
-    name: 'booking-room-icon',
+    name: 'booking-room',
   },
   {
     component: <CaretDownIcon class="h-[24px] w-[24px]" />,
-    name: 'caret-down-icon',
+    name: 'caret-down',
   },
   {
     component: <CheckIcon class="h-[24px] w-[24px]" />,
-    name: 'check-icon',
+    name: 'check',
   },
   {
     component: <ClearIcon class="h-[24px] w-[24px]" />,
-    name: 'clear-icon',
+    name: 'clear',
   },
   {
     component: <DashboardIcon class="h-[24px] w-[24px]" />,
-    name: 'dashboard-icon',
+    name: 'dashboard',
   },
   {
     component: <FacebookIcon class="h-[24px] w-[24px]" />,
-    name: 'facebook-icon',
+    name: 'facebook',
   },
   {
     component: <GithubIcon class="h-[24px] w-[24px]" />,
-    name: 'github-icon',
+    name: 'github',
   },
   {
     component: <GoogleIcon class="h-[24px] w-[24px]" />,
-    name: 'google-icon',
+    name: 'google',
   },
   {
     component: <MenuIcon class="h-[24px] w-[24px]" />,
-    name: 'menu-icon',
+    name: 'menu',
   },
   {
     component: <PlaceholderIcon class="h-[24px] w-[24px]" />,
-    name: 'placeholder-icon',
+    name: 'placeholder',
   },
   {
     component: <PropertiesIcon class="h-[24px] w-[24px]" />,
-    name: 'properties-icon',
+    name: 'properties',
   },
   {
     component: <SearchIcon class="h-[24px] w-[24px]" />,
-    name: 'search-icon',
+    name: 'search',
   },
   {
     component: <TwitterIcon class="h-[24px] w-[24px]" />,
-    name: 'twitter-icon',
+    name: 'twitter',
   },
   {
     component: <UsersIcon class="h-[24px] w-[24px]" />,
-    name: 'users-icon',
+    name: 'users',
   },
 ];
 

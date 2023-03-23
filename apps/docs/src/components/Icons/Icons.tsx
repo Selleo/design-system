@@ -28,7 +28,7 @@ export const Icons: FunctionComponent<IconsProps> = ({ iconsList }) => {
   });
 
   return (
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 preview bg-neutral-800 p-3 overflow-hidden">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 preview p-3 overflow-hidden bg-neutral-200 dark:bg-neutral-800">
       {icons}
       {shownIconName && (
         <IconModal
