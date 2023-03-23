@@ -28,3 +28,13 @@ export const parseComponent = (html: string) => {
     ReactString: ReactStringResult,
   };
 };
+
+export const parseComponentWithoutAstro = (Component: any) => {
+  const HTMLString = render(<Component />, null, { pretty: true });
+  const ReactString = parseToReact(HTMLString);
+
+  return {
+    HTMLString,
+    ReactString,
+  };
+}
