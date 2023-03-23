@@ -4,8 +4,10 @@ description: Sample Icon documentation
 layout: ../layouts/MainLayout.astro
 ---
 
-import IconPage from "../components/IconPage.astro";
-import Description from "../components/Description.astro";
+import IconPage from '../components/IconPage.astro';
+import Description from '../components/Description.astro';
+import Preview from '../components/Preview.astro';
+import { Icon } from '@selleo/core/src/Icon';
 
 import {
   BookingDeskIcon,
@@ -23,7 +25,13 @@ import {
   TwitterIcon,
   UsersIcon,
   CaretDownIcon,
-} from "@selleo/core/src/icons";
+} from '@selleo/core/src/icons';
+
+<Description>Lorem ipsum</Description>
+
+<Preview>
+  <CheckIcon class="h-[24px] w-[24px] my-0 mx-auto" />
+</Preview>
 
 <Description>
   Below you can find an Icon components styled with tailwindcss.
@@ -33,63 +41,63 @@ import {
   iconsData={[
     {
       component: BookingDeskIcon,
-      name: "booking-desk-icon",
+      name: 'booking-desk',
     },
     {
       component: BookingRoomIcon,
-      name: "booking-room-icon",
+      name: 'booking-room',
     },
     {
       component: CaretDownIcon,
-      name: "caret-down-icon",
+      name: 'caret-down',
     },
     {
       component: CheckIcon,
-      name: "check-icon",
+      name: 'check',
     },
     {
       component: ClearIcon,
-      name: "clear-icon",
+      name: 'clear',
     },
     {
       component: DashboardIcon,
-      name: "dashboard-icon",
+      name: 'dashboard',
     },
     {
       component: FacebookIcon,
-      name: "facebook-icon",
+      name: 'facebook',
     },
     {
       component: GithubIcon,
-      name: "github-icon",
+      name: 'github',
     },
     {
       component: GoogleIcon,
-      name: "google-icon",
+      name: 'google',
     },
     {
       component: MenuIcon,
-      name: "menu-icon",
+      name: 'menu',
     },
     {
       component: PlaceholderIcon,
-      name: "placeholder-icon",
+      name: 'placeholder',
     },
     {
       component: PropertiesIcon,
-      name: "properties-icon",
+      name: 'properties',
     },
     {
       component: SearchIcon,
-      name: "search-icon",
+      name: 'search',
     },
     {
       component: TwitterIcon,
-      name: "twitter-icon",
+      name: 'twitter',
     },
     {
       component: UsersIcon,
-      name: "users-icon",
+      name: 'users',
     },
   ]}
 ></IconPage>
