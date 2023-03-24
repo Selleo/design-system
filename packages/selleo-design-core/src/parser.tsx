@@ -18,7 +18,10 @@ export const parseComponent = (html: string) => {
   const HTMLString = render(<Component />, null, { pretty: true });
   const ReactString = parseToReact(HTMLString);
   const HTMLStringResult = HTMLString.replaceAll(/><\/input>|><\/img>/g, '>');
-  const ReactStringResult = ReactString.replaceAll(/><\/input>|><\/img>/g, '>');
+  const ReactStringResult = ReactString.replaceAll(
+    /><\/input>|><\/img>/g,
+    ' />'
+  );
 
   return {
     HTMLString: HTMLStringResult,
