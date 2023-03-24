@@ -51,13 +51,9 @@ export const IconModal = ({
   return (
     <>
       <div class={modalOverlayClasses} onClick={closeModal} />
-      <div class="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] mx-auto py-3 px-3 lg:px-7 lg:py-5 w-96 shadow-lg rounded-md bg-neutral-hero-overlay z-30 min-w-[220px] cursor-auto">
+      <div class="fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] mx-auto py-3 px-3 lg:px-7 lg:py-5 w-96 shadow-lg rounded-md bg-theme-gray-950 dark:bg-neutral-hero-overlay z-30 min-w-[220px] cursor-auto">
         <div onClick={closeModal}>
-          <ClearIcon
-            class="absolute top-[-1px] right-[-1px] cursor-pointer"
-            width={12}
-            height={12}
-          />
+          <ClearIcon class="absolute top-0 right-0 cursor-pointer" />
         </div>
         <div class="mt-3 text-center">
           <div class="flex items-center justify-center h-12 w-12 rounded-full mx-auto mb-2">
