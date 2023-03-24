@@ -5,8 +5,9 @@ import classNames from 'classnames';
 import { ClearIcon } from '@selleo/core/src/icons';
 import { Button } from '@selleo/core/src/Button';
 import { H4 } from '@selleo/core/src/Headers';
-import type { IconProps } from './Icons';
 import { Icon } from '@selleo/core/src/Icon';
+
+import type { IconProps } from './Icons';
 
 type IconModalProps = {
   name: string;
@@ -59,8 +60,8 @@ export const IconModal = ({
           />
         </div>
         <div class="mt-3 text-center">
-          <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full">
-            <Icon component={shownIcon!.component} name={shownIcon!.name} />
+          <div class="flex items-center justify-center h-12 w-12 rounded-full mx-auto mb-2">
+            <Icon name={shownIcon!.name} />
           </div>
           <H4>{name}</H4>
           <div class="flex items-center text-white z-2 pt-5">

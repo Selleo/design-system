@@ -2,12 +2,11 @@ import type { h, FunctionComponent } from 'preact';
 import { useState } from 'preact/hooks';
 import type { JSXInternal } from 'preact/src/jsx';
 
-import { Icon } from '@selleo/core/src/Icon';
 import { IconModal } from './IconModal';
+import { IconPreview } from './IconPreview';
 
 export type IconProps = {
   name: string;
-  component: () => JSXInternal.Element;
   htmlString: string;
   reactString: string;
 };
@@ -23,8 +22,8 @@ export const Icons: FunctionComponent<IconsProps> = ({ iconsList }) => {
     setShownIconName(name);
   };
 
-  const icons = iconsList.map((item) => {
-    return <Icon {...item} onClick={() => handleClick(item.name)} />;
+  const icons = iconsList.map(({ name }) => {
+    return <IconPreview name={name} onClick={() => handleClick(name)} />;
   });
 
   return (

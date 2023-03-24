@@ -1,6 +1,10 @@
-import { Fragment, h, VNode } from "preact";
-import render from "preact-render-to-string";
-import { parse } from "preact-parser";
+import { Fragment, h, VNode } from 'preact';
+import render from 'preact-render-to-string';
+import { parse } from 'preact-parser';
+
+import { IconProps } from './Icon';
+
+type IconType = ({ name, ...props }: IconProps) => h.JSX.Element;
 
 export const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
@@ -29,8 +33,10 @@ export const parseComponent = (html: string) => {
   };
 };
 
-export const parseComponentWithoutAstro = (Component: any) => {
-  const HTMLString = render(<Component />, null, { pretty: true });
+export const parseComponentWithoutAstro = (name: string, Icon: IconType) => {
+  const HTMLString = render(<Icon name={name} />, null, {
+    pretty: true,
+  });
   const ReactString = parseToReact(HTMLString);
 
   return {
