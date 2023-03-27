@@ -6,21 +6,20 @@ import { ClearIcon } from '@selleo/core/src/icons';
 import { Button } from '@selleo/core/src/Button';
 import { H4 } from '@selleo/core/src/Headers';
 import { Icon } from '@selleo/core/src/Icon';
-
-import type { IconProps } from './Icons';
+import type { IconProps, Icons } from './Icons';
 
 type IconModalProps = {
-  name: string;
+  iconsObj: IconProps;
+  shownIconName: Icons;
   setShownIconName: StateUpdater<string | null>;
-  iconsList: IconProps[];
 };
 
 export const IconModal = ({
-  name,
+  iconsObj,
+  shownIconName,
   setShownIconName,
-  iconsList,
 }: IconModalProps) => {
-  const shownIcon = iconsList.find((icon) => icon.name === name);
+  const icon = iconsObj[shownIconName];
 
   const updateClipboard = (code: string) => {
     navigator.clipboard.writeText(code);
@@ -32,7 +31,7 @@ export const IconModal = ({
       .then((result) => {
         if (result.state === 'granted' || result.state === 'prompt') {
           const codeToCopy =
-            variant === 'html' ? shownIcon!.htmlString : shownIcon!.reactString;
+            variant === 'html' ? icon.htmlString : icon.reactString;
 
           return updateClipboard(codeToCopy);
         }
@@ -57,15 +56,14 @@ export const IconModal = ({
         </div>
         <div class="mt-3 text-center">
           <div class="flex items-center justify-center h-12 w-12 rounded-full mx-auto mb-2">
-            <Icon name={shownIcon!.name} />
+            <Icon name={shownIconName} />
           </div>
-          <H4>{name}</H4>
-          <div class="flex items-center text-white z-2 pt-5">
+          <H4>{shownIconName}</H4>
+          <div class="flex items-center text-white z-2 pt-5 gap-2">
             <Button
               size="small"
               variant="primary"
               onClick={() => handleCopy('react')}
-              class="mr-1"
             >
               React Code
             </Button>
@@ -73,7 +71,6 @@ export const IconModal = ({
               size="small"
               variant="primary"
               onClick={() => handleCopy('html')}
-              class="ml-1"
             >
               HTML Code
             </Button>

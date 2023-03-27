@@ -1,19 +1,26 @@
 ---
-import { Icons } from './Icons/Icons';
-import { parseComponentWithoutAstro } from '@selleo/core';
-import { Icon } from '@selleo/core/src/Icon';
+import { h } from 'preact';
+
+import { IconProps, Icons } from './Icons/Icons';
+import { parseComponentWithoutAstro } from '@selleo/core/src/parser';
 
 const { iconsData } = Astro.props;
 
-const iconsList = iconsData.map(({ name }: { name: string }) => {
-  const { HTMLString, ReactString } = parseComponentWithoutAstro(name, Icon);
+const icons = {} as IconProps;
 
-  return {
-    name,
+for (let icon in iconsData) {
+  const { HTMLString, ReactString } = parseComponentWithoutAstro(
+    iconsData[icon],
+    {
+      icon,
+    }
+  );
+
+  icons[icon as Icons] = {
     htmlString: HTMLString,
     reactString: ReactString,
   };
-});
+}
 ---
 
-<Icons iconsList={iconsList} client:load />
+<Icons iconsObj={icons} client:load />
