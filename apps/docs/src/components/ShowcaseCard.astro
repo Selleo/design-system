@@ -1,5 +1,4 @@
 ---
-import { Picture } from "@astrojs/image/components";
 const { title, href } = Astro.props;
 ---
 
@@ -8,14 +7,18 @@ const { title, href } = Astro.props;
   role="button"
   href={href}
 >
-  <figure class="px-2 pt-2">
-    <img src={`/${href}-showcase.png`} class="rounded" />
-  </figure>
+  <div class="px-2 pt-2">
+    <figure
+      class="flex justify-center items-center h-7 w-full bg-white rounded"
+    >
+      <img src={`/${href}-showcase.png`} />
+    </figure>
+  </div>
   <div class="px-2 pb-2 text-sm flex flex-1 flex-col justify-end">
     <h2
       class="flex items-center gap-0.5 text-base leading-relaxed font-semibold"
     >
-      {title || "Sample Title"}
+      {title || 'Sample Title'}
     </h2>
   </div>
 </a>

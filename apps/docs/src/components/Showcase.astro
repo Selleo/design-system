@@ -1,7 +1,7 @@
 ---
-import { SIDEBAR } from "../config";
-import { getLanguageFromURL } from "../languages";
-import ShowcaseCard from "./ShowcaseCard.astro";
+import { SIDEBAR } from '../config';
+import { getLanguageFromURL } from '../languages';
+import ShowcaseCard from './ShowcaseCard.astro';
 
 const currentPage = Astro.url.pathname;
 const langCode = getLanguageFromURL(currentPage);
@@ -12,8 +12,17 @@ const components = SIDEBAR[langCode]?.Components;
   class="preview grid grid-cols-1 gap-x-1 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 >
   {
-    components.map(({ text, link }) => (
-      <ShowcaseCard title={text} href={link} />
-    ))
+    components.map(({ text, sublinks, link }) => {
+      if (link) return <ShowcaseCard title={text} href={link} />;
+
+      if (sublinks)
+        return (
+          <>
+            {sublinks?.map(({ text, link }) => (
+              <ShowcaseCard title={text} href={link} />
+            ))}
+          </>
+        );
+    })
   }
 </div>
