@@ -1,12 +1,12 @@
 import { h } from 'preact';
-import type { StateUpdater } from 'preact/hooks';
+import { StateUpdater } from 'preact/hooks';
 import classNames from 'classnames';
 
 import { ClearIcon } from '@selleo/core/src/icons';
-import { Button } from '@selleo/core/src/Button';
 import { H4 } from '@selleo/core/src/Headers';
-import { Icon } from '@selleo/core/src/Icon';
+import { Icon } from '@selleo/core/src/Icon/Icon';
 import type { IconProps, Icons } from './Icons';
+import { CopyCodeButton } from './CopyCodeButton';
 
 type IconModalProps = {
   iconsObj: IconProps;
@@ -20,23 +20,6 @@ export const IconModal = ({
   setShownIconName,
 }: IconModalProps) => {
   const icon = iconsObj[shownIconName];
-
-  const updateClipboard = (code: string) => {
-    navigator.clipboard.writeText(code);
-  };
-
-  const handleCopy = (variant: 'react' | 'html') =>
-    navigator.permissions
-      .query({ name: 'clipboard-write' as any })
-      .then((result) => {
-        if (result.state === 'granted' || result.state === 'prompt') {
-          const codeToCopy =
-            variant === 'html' ? icon.htmlString : icon.reactString;
-
-          return updateClipboard(codeToCopy);
-        }
-        alert('permission denied');
-      });
 
   const closeModal = (e: h.JSX.TargetedMouseEvent<HTMLDivElement>) => {
     setShownIconName(null);
@@ -54,26 +37,21 @@ export const IconModal = ({
         <div onClick={closeModal}>
           <ClearIcon class="absolute top-0 right-0 cursor-pointer" />
         </div>
-        <div class="mt-3 text-center">
+        <div class="text-center">
           <div class="flex items-center justify-center h-12 w-12 rounded-full mx-auto mb-2">
             <Icon name={shownIconName} />
           </div>
           <H4>{shownIconName}</H4>
-          <div class="flex items-center text-white z-2 pt-5 gap-2">
-            <Button
-              size="small"
-              variant="primary"
-              onClick={() => handleCopy('react')}
-            >
-              React Code
-            </Button>
-            <Button
-              size="small"
-              variant="primary"
-              onClick={() => handleCopy('html')}
-            >
-              HTML Code
-            </Button>
+          <div class="pt-4 text-white">
+            <span class="text-xs">Click to copy the code:</span>
+            <div class="flex items-center z-2 pt-2 gap-2">
+              <CopyCodeButton icon={icon} copyFormat="react">
+                React Code
+              </CopyCodeButton>
+              <CopyCodeButton icon={icon} copyFormat="html">
+                HTML Code
+              </CopyCodeButton>
+            </div>
           </div>
         </div>
       </div>

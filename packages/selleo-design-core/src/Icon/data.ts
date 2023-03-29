@@ -16,7 +16,7 @@ import {
   TwitterIcon,
   UsersIcon,
   CaretDownIcon,
-} from '@selleo/core/src/icons';
+} from '../icons';
 
 const iconsData = {
   'booking-desk': BookingDeskIcon,

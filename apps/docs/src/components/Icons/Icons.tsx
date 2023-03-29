@@ -1,7 +1,7 @@
 import type { h, FunctionComponent } from 'preact';
 import { useState } from 'preact/hooks';
 
-import type iconsData from './data';
+import type iconsData from '@selleo/core/src/Icon/data';
 import { IconModal } from './IconModal';
 import { IconPreview } from './IconPreview';
 

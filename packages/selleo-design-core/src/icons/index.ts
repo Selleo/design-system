@@ -26,3 +26,5 @@ export * from './SelleoSignetWhite';
 export * from './MenuIcon';
 export * from './CaretDownIcon';
 export * from './CaretUpIcon';
+export * from './CopyIcon';
+export * from './CopyCompletedIcon';

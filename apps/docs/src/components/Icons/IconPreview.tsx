@@ -1,7 +1,7 @@
 import { h } from 'preact';
 
-import { Icon } from '@selleo/core/src/Icon';
-import type iconsData from './data';
+import { Icon } from '@selleo/core/src/Icon/Icon';
+import type iconsData from '@selleo/core/src/Icon/data';
 
 type IconPreviewProps = {
   name: keyof typeof iconsData;

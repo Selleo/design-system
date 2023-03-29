@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-import iconsData from '../../../apps/docs/src/components/Icons/data';
+import iconsData from './data';
 
 export type IconProps = {
   name: keyof typeof iconsData;
