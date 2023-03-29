@@ -1,6 +1,6 @@
-import { h } from "preact";
+import { h } from 'preact';
 
-export function DashboardIcon() {
+export function DashboardIcon(props: h.JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ export function DashboardIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      {...props}
     >
       <path
         d="M7.49811 10.1572V17.0021H16.6019V10.2273"

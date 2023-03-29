@@ -1,0 +1,26 @@
+---
+import { h } from 'preact';
+
+import { IconProps, Icons } from './Icons/Icons';
+import { parseComponentWithoutAstro } from '@selleo/core';
+
+const { iconsData } = Astro.props;
+
+const icons = Object.keys(iconsData).reduce((icons, current) => {
+  const { HTMLString, ReactString } = parseComponentWithoutAstro(
+    iconsData[current],
+    {
+      icon: current,
+    }
+  );
+
+  icons[current as Icons] = {
+    htmlString: HTMLString,
+    reactString: ReactString,
+  };
+
+  return icons;
+}, {} as IconProps);
+---
+
+<Icons iconsObj={icons} client:load />

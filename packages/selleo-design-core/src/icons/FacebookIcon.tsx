@@ -1,12 +1,14 @@
 import { h } from 'preact';
 
-export const FacebookIcon = () => {
+export const FacebookIcon = (props: h.JSX.SVGAttributes<SVGSVGElement>) => {
   return (
     <svg
-      className="h-2 w-5"
       aria-hidden="true"
       fill="currentColor"
-      viewBox="0 0 20 20"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      {...props}
     >
       <path
         fillRule="evenodd"

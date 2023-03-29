@@ -2,7 +2,7 @@ import { Fragment, h, VNode } from 'preact';
 import render from 'preact-render-to-string';
 import { parse } from 'preact-parser';
 
-const parseToReact = (componentAsString: string) => {
+export const parseToReact = (componentAsString: string) => {
   return componentAsString.replaceAll('class="', 'className="');
 };
 
@@ -26,5 +26,20 @@ export const parseComponent = (html: string) => {
   return {
     HTMLString: HTMLStringResult,
     ReactString: ReactStringResult,
+  };
+};
+
+export const parseComponentWithoutAstro = (
+  Component: (args: typeof props) => h.JSX.Element,
+  props: { [key: string]: unknown }
+) => {
+  const HTMLString = render(<Component {...props} />, null, {
+    pretty: true,
+  });
+  const ReactString = parseToReact(HTMLString);
+
+  return {
+    HTMLString,
+    ReactString,
   };
 };

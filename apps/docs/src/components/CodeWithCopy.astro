@@ -1,12 +1,12 @@
 ---
-import type * as shiki from "shiki";
-import { Icon } from "astro-icon";
+import type * as shiki from 'shiki';
+import { Icon } from 'astro-icon';
 interface Props {
   code: string;
   lang?: shiki.Lang | shiki.ILanguageRegistration;
   theme?: shiki.IThemeRegistration;
 }
-import { Code } from "astro/components";
+import { Code } from 'astro/components';
 const { code, lang, theme } = Astro.props;
 ---
 
@@ -50,44 +50,44 @@ const { code, lang, theme } = Astro.props;
       super();
 
       const code = this.dataset.code;
-      const successButton = this.querySelector("#copy-success-button")!;
-      const button = this.querySelector("#copy-button")!;
+      const successButton = this.querySelector('#copy-success-button')!;
+      const button = this.querySelector('#copy-button')!;
 
       this.code = code;
       this.button = button;
       this.successButton = successButton;
 
-      button.addEventListener("click", () => {
+      button.addEventListener('click', () => {
         this.copyToClipboard();
       });
     }
 
     copyToClipboard() {
       navigator.permissions
-        .query({ name: "clipboard-write" as any })
+        .query({ name: 'clipboard-write' as any })
         .then((result) => {
-          if (result.state === "granted" || result.state === "prompt") {
-            this.updateClipboard(this.code || "");
+          if (result.state === 'granted' || result.state === 'prompt') {
+            this.updateClipboard(this.code || '');
             return;
           }
-          alert("pemission denied");
+          alert('pemission denied');
         });
     }
 
     updateClipboard(newClip: string) {
       navigator.clipboard.writeText(newClip).then(
         () => {
-          this.successButton.classList.remove("invisible");
+          this.successButton.classList.remove('invisible');
           setTimeout(() => {
-            this.successButton.classList.add("invisible");
+            this.successButton.classList.add('invisible');
           }, 1500);
         },
         () => {
-          alert("err");
+          alert('err');
         }
       );
     }
   }
 
-  customElements.define("code-with-copy", CodeWithCopy);
+  customElements.define('code-with-copy', CodeWithCopy);
 </script>

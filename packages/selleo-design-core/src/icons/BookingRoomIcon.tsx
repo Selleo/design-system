@@ -1,6 +1,6 @@
-import { h } from "preact";
+import { h } from 'preact';
 
-export function BookingRoomIcon() {
+export function BookingRoomIcon(props: h.JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ export function BookingRoomIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      {...props}
     >
       <path
         d="M14.0008 16.0147V20.5036C14.0008 20.7797 14.2149 21.0038 14.48 21.0038H19.5251C19.7892 21.0038 20.0033 20.7797 20.0033 20.5036V15.9877"

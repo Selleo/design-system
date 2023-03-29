@@ -1,0 +1,23 @@
+---
+title: Icon
+description: Sample Icon documentation
+layout: ../layouts/MainLayout.astro
+---
+
+import IconPage from '../components/IconPage.astro';
+import Description from '../components/Description.astro';
+import Preview from '../components/Preview.astro';
+import { Icon } from '@selleo/core/src/Icon/Icon';
+import iconsData from "@selleo/core/src/Icon/data"
+
+import { CheckIcon } from '@selleo/core/src/icons';
+
+<Preview>
+  <CheckIcon class="h-[24px] w-[24px] my-0 mx-auto" />
+</Preview>
+
+<Description>
+  All available icons:
+</Description>
+
+<IconPage iconsData={iconsData}></IconPage>

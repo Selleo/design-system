@@ -3,23 +3,23 @@ import { h } from 'preact';
 export function ClearIcon(props: h.JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
-        d="M6.99998 0.999969L0.999985 6.99997"
-        stroke={props.stroke || 'currentColor'}
+        d="M15 8.99998L9 15"
+        stroke="#FF6D2A"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M6.99998 6.99997L0.999985 0.999969"
-        stroke={props.stroke || 'currentColor'}
+        d="M15 15L9 8.99998"
+        stroke="#FF6D2A"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
