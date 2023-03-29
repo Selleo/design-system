@@ -43,13 +43,12 @@ export const IconModal = ({
           </div>
           <H4>{shownIconName}</H4>
           <div class="pt-4 text-white">
-            <span class="text-xs">Click to copy the code:</span>
-            <div class="flex items-center z-2 pt-2 gap-2">
-              <CopyCodeButton icon={icon} copyFormat="react">
-                React Code
-              </CopyCodeButton>
+            <span class="text-xs text-black dark:text-white">
+              Click to copy the code:
+            </span>
+            <div class="flex items-center justify-center z-2 pt-2">
               <CopyCodeButton icon={icon} copyFormat="html">
-                HTML Code
+                SVG code
               </CopyCodeButton>
             </div>
           </div>
