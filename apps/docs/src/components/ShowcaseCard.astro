@@ -9,9 +9,9 @@ const { title, href } = Astro.props;
 >
   <div class="px-2 pt-2">
     <figure
-      class="flex justify-center items-center h-7 w-full bg-white rounded"
+      class="flex justify-center items-center h-9 sm:h-8 w-full bg-white rounded overflow-hidden"
     >
-      <img src={`/${href}-showcase.png`} />
+      <img src={`/${href}-showcase.png`} class="object-fit" />
     </figure>
   </div>
   <div class="px-2 pb-2 text-sm flex flex-1 flex-col justify-end">
