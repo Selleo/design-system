@@ -64,13 +64,13 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
           <slot />
         </PageContent>
       </div>
-      <aside
+      <!-- <aside
         id="grid-right"
         class="w-full h-full grid-sidebar hidden h-screen sticky top-0 p-0 xl:col-start-3 xl:flex"
         title="Table of Contents"
       >
         <RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-      </aside>
+      </aside> -->
     </main>
     <Footer path={currentFile} />
   </body>
