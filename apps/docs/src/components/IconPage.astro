@@ -6,21 +6,21 @@ import { parseComponentWithoutAstro } from '@selleo/core';
 
 const { iconsData } = Astro.props;
 
-const icons = {} as IconProps;
-
-for (let icon in iconsData) {
+const icons = Object.keys(iconsData).reduce((icons, current) => {
   const { HTMLString, ReactString } = parseComponentWithoutAstro(
-    iconsData[icon],
+    iconsData[current],
     {
-      icon,
+      icon: current,
     }
   );
 
-  icons[icon as Icons] = {
+  icons[current as Icons] = {
     htmlString: HTMLString,
     reactString: ReactString,
   };
-}
+
+  return icons;
+}, {} as IconProps);
 ---
 
 <Icons iconsObj={icons} client:load />
