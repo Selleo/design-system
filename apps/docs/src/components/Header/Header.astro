@@ -6,6 +6,7 @@ import SkipToContent from './SkipToContent.astro';
 import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
 import Search from './Search';
+import ThemeToggleButton from '../RightSidebar/ThemeToggleButton';
 
 type Props = {
   currentPage: string;
@@ -41,7 +42,7 @@ const lang = getLanguageFromURL(currentPage);
         </h1>
       </a>
     </div>
-    <div class="grow"></div>
+    <!-- <div class="grow"></div> -->
     {
       KNOWN_LANGUAGE_CODES.length > 1 && (
         <LanguageSelect lang={lang} client:idle />
@@ -56,5 +57,8 @@ const lang = getLanguageFromURL(currentPage);
     </div> 
     */
     }
+    <div style="margin: 2rem 0; text-align: center;">
+      <ThemeToggleButton client:visible />
+    </div>
   </nav>
 </header>
