@@ -1,5 +1,5 @@
 import { FunctionComponent, h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 
 import { Button } from '@selleo/core/src/Button';
 import { CopyCompletedIcon, CopyIcon } from '@selleo/core/src/icons';
@@ -26,10 +26,6 @@ export const CopyCodeButton: FunctionComponent<ButtonProps> = ({
   const handleCopy = (variant: 'react' | 'html') => {
     setIsCopying(true);
 
-    setTimeout(() => {
-      setIsCopying(false);
-    }, 1000);
-
     navigator.permissions
       .query({ name: 'clipboard-write' as any })
       .then((result) => {
@@ -50,6 +46,14 @@ export const CopyCodeButton: FunctionComponent<ButtonProps> = ({
   const CopyCompletedIconEnd = () => (
     <CopyCompletedIcon class="stroke-white w-[20px] h-[20px] ml-[4px]" />
   );
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (isCopying) setIsCopying(false);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [isCopying]);
 
   return (
     <Button
