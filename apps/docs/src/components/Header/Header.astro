@@ -5,8 +5,7 @@ import SelleoLogo from './SelleoLogo.astro';
 import SkipToContent from './SkipToContent.astro';
 import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
-import Search from './Search';
-import ThemeToggleButton from '../RightSidebar/ThemeToggleButton';
+import ThemeToggleButton from './ThemeToggleButton';
 
 type Props = {
   currentPage: string;
@@ -42,22 +41,12 @@ const lang = getLanguageFromURL(currentPage);
         </h1>
       </a>
     </div>
-    <!-- <div class="grow"></div> -->
     {
       KNOWN_LANGUAGE_CODES.length > 1 && (
         <LanguageSelect lang={lang} client:idle />
       )
     }
-    {
-      /*     
-    <div
-      class="flex relative z-10 grow pr-[0.7rem] max-w-[200px] md:max-w-[400px]"
-    >
-      <Search client:idle />
-    </div> 
-    */
-    }
-    <div style="margin: 2rem 0; text-align: center;">
+    <div class="my-[2rem]">
       <ThemeToggleButton client:visible />
     </div>
   </nav>

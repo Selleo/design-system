@@ -1,22 +1,19 @@
 ---
-import type { MarkdownHeading } from "astro";
-import type { Frontmatter } from "../../config";
-import MoreMenu from "../RightSidebar/MoreMenu.astro";
-import TableOfContents from "../RightSidebar/TableOfContents";
+import type { MarkdownHeading } from 'astro';
+import type { Frontmatter } from '../../config';
 
 type Props = {
   frontmatter: Frontmatter;
   headings: MarkdownHeading[];
-  githubEditUrl: string;
 };
 
-const { frontmatter, headings, githubEditUrl } = Astro.props as Props;
+const { frontmatter, headings } = Astro.props as Props;
 const title = frontmatter.title;
 ---
 
 <article
   id="article"
-  class="content p-0 max-w-[75ch] w-full h-full flex flex-col items-stretch"
+  class="content p-0 w-full h-full flex flex-col items-stretch"
 >
   <section
     class="main-section mb-[4rem] [&>_*+*]:mt-2.5 [&_p:not(.preview_p)]:text-sm [&_p:not(.preview_p)]:leading-relaxed [&_p:not(.preview_p)]:text-theme-gray-400 [&_p:not(.preview_p)]:dark:text-theme-gray-800 md:[&_p:not(.preview_p)]:text-base [&_h1:not(.preview_h1)]:mb-2 [&_h1:not(.preview_h1)]:font-black [&_h1:not(.preview_h1)]:leading-none [&_h1:not(.preview_h1)]:text-xxl [&_h2:not(nav_h2):not(.preview_h2)]:mb-2 [&_h2:not(.preview_h2)]:font-bold [&_h2:not(.preview_h2)]:leading-none [&_h2:not(nav_h2):not(.preview_h2)]:text-xl [&_h3:not(.preview_h3)]:mb-2 [&_h3:not(.preview_h3)]:font-bold [&_h3:not(.preview_h3)]:leading-none [&_h3:not(.preview_h3)]:text-md md:[&_h3:not(.preview_h3)]:text-lg [&_h4:not(.preview_h4)]:mb-2 [&_h4:not(.preview_h4)]:font-bold [&_h4:not(.preview_h4)]:leading-none [&_h4:not(.preview_h4)]:text-md [&_h5:not(.preview_h5)]:mb-2 [&_h5:not(.preview_h5)]:font-bold [&_h5:not(.preview_h5)]:leading-none [&_h5:not(.preview_h5)]:text-sm [&_h6:not(.preview_h6)]:mb-2 [&_h6:not(.preview_h6)]:font-bold [&_h6:not(.preview_h6)]:leading-none [&_h6:not(.preview_h6)]:text-xs [&_h4:not(:first-child):not(.preview_h4)]:mt-[2rem] [&_h5:not(:first-child):not(.preview_h5)]:mt-[2rem] [&_h6:not(:first-child)::not(.preview_h6)]:mt-[2rem] [&_h2:not(:first-child):not(.preview_h2)]:mt-[3rem] [&_h3:not(:first-child):not(.preview_h3)]:mt-[3rem] [&_ul:not(.preview_ul)]:leading-4 [&_ul:not(.preview_ul)]:text-theme-gray-400 [&_ul:not(.preview_ul)]:dark:text-theme-gray-800 [&_a:not(nav_a):not(.preview_a)]:text-theme-accent [&_li:not(nav_li):not(:first-child):not(.preview_li)]:mt-[0.75rem] [&_ul:not(nav_ul):not(.preview_ul)]:pl-2 [&_ol:not(nav_ol):not(.preview_ol)]:pl-2 [&_iframe]:w-full [&_iframe]:aspect-video [&_a:hover:not(.preview_a)]:underline [&_a:focus-visible:not(.preview_a)]:underline [&_a:focus-visible:not(.preview_a)]:outline [&_a:focus-visible:not(.preview_a)]:outline-2 [&_a:focus-visible:not(.preview_a)]:outline-offset-4 [&_a:focus-visible:not(.preview_a)]:outline-theme-accent [&_code]:text-xs [&_code:not(pre_code)]:bg-theme-gray-950 dark:[&_code:not(pre_code)]:bg-theme-gray-100 [&_code]:py-[0.2rem] [&_code]:px-[0.33rem] [&_code]:my-[-0.2rem] [&_code]:mx-[-0.125em] [&_code]:rounded-[3px] [&_code]:break-words [&_pre]:relative [&_pre]:py-2 [&_pre]:pl-2 [&_pre]:pr-[4rem] [&_pre]:text-xs md:[&_pre]:text-sm [&_pre]:overflow-x-auto [&_pre]:overflow-y-hidden md:[&_pre]:mx-0 md:[&_pre]:rounded-lg md:[&_pre]:pl-2.5 md:[&_pre]:pr-5 [&_table]:relative [&_table]:py-2 [&_table]:pl-4 [&_table]:pr-[4rem] [&_table]:text-xs [&_table]:overflow-x-auto [&_table]:overflow-y-hidden [&_table]:m-0 md:[&_table]:rounded-lg md:[&_table]:pl-2.5 md:[&_table]:pr-5 [&_table]:w-full [&_table]:px-0 [&_table]:border-collapse [&_tr:nth-of-type(odd)]:bg-theme-gray-950 dark:[&_tr:nth-of-type(odd)]:bg-theme-gray-400 [&_th]:font-bold [&_th]:p-1 [&_td]:p-1"
@@ -27,12 +24,6 @@ const title = frontmatter.title;
     >
       {title}
     </h1>
-    <nav class="mt-2.5 mb-4 md:hidden">
-      <TableOfContents client:media="(max-width: 50em)" headings={headings} />
-    </nav>
     <slot />
   </section>
-  <nav class="md:hidden">
-    <MoreMenu editHref={githubEditUrl} />
-  </nav>
 </article>
