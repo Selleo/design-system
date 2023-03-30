@@ -46,8 +46,6 @@ const lang = getLanguageFromURL(currentPage);
         <LanguageSelect lang={lang} client:idle />
       )
     }
-    <div class="my-[2rem]">
-      <ThemeToggleButton client:visible />
-    </div>
+    <ThemeToggleButton client:visible />
   </nav>
 </header>
