@@ -36,7 +36,11 @@ const sidebar = SIDEBAR[langCode];
                       <div class="subTitle flex items-center cursor-pointer text-sm m-[1px] py-[0.3rem] px-2 text-inherit hover:no-underline focus:no-underline focus-visible:no-underline hover:bg-theme-gray-950 dark:hover:bg-theme-gray-400 focus-visible:bg-theme-gray-950 dark:focus-visible:bg-theme-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-theme-gray-100 dark:focus-visible:outline-white">
                         <a>{child.text}</a>
                         <div class="caret-icon z-[1]">
-                          <CaretDownIcon width={24} height={24} />
+                          <CaretDownIcon
+                            width={24}
+                            height={24}
+                            class="stroke-black dark:stroke-white"
+                          />
                         </div>
                       </div>
                       <ul class={`${shouldBeExpanded ? '' : 'hidden'} submenu`}>
@@ -111,17 +115,16 @@ const sidebar = SIDEBAR[langCode];
             xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
+      class="stroke-black dark:stroke-white"
     >
       <path
         d="M12 14L15 10.9999"
-        stroke="white"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M9 11L12 14"
-        stroke="white"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -134,17 +137,16 @@ const sidebar = SIDEBAR[langCode];
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="stroke-black dark:stroke-white"
     >
       <path
         d="M12 11L9 14.0001"
-        stroke="white"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M15 14L12 11"
-        stroke="white"
         stroke-width="1.2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -159,11 +161,10 @@ const sidebar = SIDEBAR[langCode];
 
         const iconParent = document.querySelector('.caret-icon');
 
-        iconParent.innerHTML = e.target.nextElementSibling.classList.contains(
-          'hidden'
-        )
-          ? caretDownIcon
-          : caretUpIcon;
+        iconParent.innerHTML =
+          e.currentTarget.nextElementSibling.classList.contains('hidden')
+            ? caretDownIcon
+            : caretUpIcon;
       });
     });
   });
