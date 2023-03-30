@@ -4,7 +4,6 @@ import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
 import * as CONFIG from '../config';
 import type { MarkdownHeading } from 'astro';
 import Footer from '../components/Footer/Footer.astro';
@@ -19,7 +18,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname.replace(/\/$/, '');
 
 const currentFile = `src/pages/${currentPage || 'index'}.mdx`;
-const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 ---
 
 <html
@@ -44,33 +42,22 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
   >
     <Header currentPage={currentPage} />
     <main
-      class="layout grid grid-flow-col overflow-x-hidden grid-cols-[minmax(0.5rem,_1fr)_minmax(0,_calc(100%-1rem))_minmax(0.5rem,_1fr)] md:overflow-auto md:grid md:gap-[1em] md:grid-cols-[20rem_minmax(0,_46em)] xl:grid xl:grid-cols-[20rem_minmax(0,_46em)_18rem] xl:px-0 xl:my-0 xl:mx-auto"
+      class="w-full max-w-[82em] layout grid grid-flow-col overflow-x-hidden grid-cols-[minmax(0.5rem,_1fr)_minmax(0,_calc(100%-1rem))_minmax(0.5rem,_1fr)] md:overflow-auto md:grid md:gap-[1em] md:grid-cols-[20rem_minmax(0,_46em)] xl:grid xl:grid-cols-[20rem_minmax(0,_1fr)] xl:px-0 xl:my-0 mx-auto"
     >
       <aside
         id="grid-left"
-        class="[body.overflow-hidden_&]:block [body.overflow-hidden_&]:top-[2rem] w-full h-full grid-sidebar hidden bg-white dark:bg-theme-dark z-10 h-screen fixed md:sticky top-0 p-0 md:flex md:pl-[2rem] md:sticky md:col-start-1 z-0"
+        class="[body.overflow-hidden_&]:block [body.overflow-hidden_&]:top-[2rem] w-full h-full grid-sidebar hidden bg-white dark:bg-theme-dark z-10 h-screen fixed md:sticky top-0 p-0 md:flex md:pl-[2rem] md:sticky md:col-start-1 z-1 grow"
         title="Site Navigation"
       >
         <LeftSidebar currentPage={currentPage} />
       </aside>
       <div
-        class="w-full h-full py-[2rem] px-[0.5rem] col-start-2 flex flex-col h-full"
+        class="w-full h-full py-[2rem] px-[0.5rem] col-start-2 flex flex-col grow"
       >
-        <PageContent
-          frontmatter={frontmatter}
-          headings={headings}
-          githubEditUrl={githubEditUrl}
-        >
+        <PageContent frontmatter={frontmatter} headings={headings}>
           <slot />
         </PageContent>
       </div>
-      <aside
-        id="grid-right"
-        class="w-full h-full grid-sidebar hidden h-screen sticky top-0 p-0 xl:col-start-3 xl:flex"
-        title="Table of Contents"
-      >
-        <RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-      </aside>
     </main>
     <Footer path={currentFile} />
   </body>

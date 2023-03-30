@@ -5,8 +5,8 @@ type Props = {
 };
 
 const { path } = Astro.props as Props;
-const isIndex = path.includes("pages.mdx");
-const resolvedPath = !isIndex ? `apps/docs/${path}` : "/";
+const isIndex = path.includes('pages.mdx');
+const resolvedPath = !isIndex ? `apps/docs/${path}` : '/';
 const url = `https://api.github.com/repos/Selleo/design-system/commits?path=${resolvedPath}`;
 const commitsURL = `https://github.com/Selleo/design-system/commits/main/${resolvedPath}`;
 
@@ -19,20 +19,20 @@ type Commit = {
 
 async function getCommits(url: string) {
   try {
-    const token = import.meta.env.SNOWPACK_PUBLIC_GITHUB_TOKEN ?? "hello";
+    const token = import.meta.env.SNOWPACK_PUBLIC_GITHUB_TOKEN ?? 'hello';
     if (!token) {
       throw new Error(
         'Cannot find "SNOWPACK_PUBLIC_GITHUB_TOKEN" used for escaping rate-limiting.'
       );
     }
 
-    const auth = `Basic ${Buffer.from(token, "binary").toString("base64")}`;
+    const auth = `Basic ${Buffer.from(token, 'binary').toString('base64')}`;
 
     const res = await fetch(url, {
-      method: "GET",
+      method: 'GET',
       headers: {
         Authorization: auth,
-        "User-Agent": "astro-docs/1.0",
+        'User-Agent': 'astro-docs/1.0',
       },
     });
 
@@ -54,7 +54,7 @@ async function getCommits(url: string) {
 }
 
 function removeDups(arr: Commit[]) {
-  const map = new Map<string, Commit["author"]>();
+  const map = new Map<string, Commit['author']>();
 
   for (let item of arr) {
     const author = item.author;
@@ -75,7 +75,7 @@ const additionalContributors = unique.length - recentContributors.length; // lis
 ---
 
 <!-- Thanks to @5t3ph for https://smolcss.dev/#smol-avatar-list! -->
-<div class="flex items-center">
+<div class="flex items-center max-w-[82em] mx-auto">
   <ul
     class="avatar-list list-none text-xl p-0.5 flex overflow-hidden list-none p-0"
     style={`--avatar-count: ${recentContributors.length}`}
@@ -107,7 +107,7 @@ const additionalContributors = unique.length - recentContributors.length; // lis
           href={commitsURL}
           class="text-theme-accent hover:underline focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         >{`and ${additionalContributors} additional contributor${
-          additionalContributors > 1 ? "s" : ""
+          additionalContributors > 1 ? 's' : ''
         }.`}</a>
       </span>
     )
