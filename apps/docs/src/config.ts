@@ -45,7 +45,6 @@ type Submenu = { text: string; sublinks: Link[] };
 export type Sidebar = Record<
   typeof KNOWN_LANGUAGE_CODES[number],
   Record<string, (Link | Submenu)[]>
-  // Record<string, { text: string; link: string; src?: ImageMetadata }[]>
 >;
 
 export const SIDEBAR: Sidebar = {

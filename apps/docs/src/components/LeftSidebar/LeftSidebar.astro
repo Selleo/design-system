@@ -43,7 +43,7 @@ const sidebar = SIDEBAR[langCode];
                           />
                         </div>
                       </div>
-                      <ul class={`${!shouldBeExpanded && 'hidden'} submenu`}>
+                      <ul class={`${shouldBeExpanded ? '' : 'hidden'} submenu`}>
                         {child.sublinks.map((sublink) => {
                           const sublinkUrl =
                             Astro.site?.pathname + sublink.link;

@@ -18,7 +18,7 @@ const components = SIDEBAR[langCode]?.Components;
       if (sublinks)
         return (
           <>
-            {sublinks?.map(({ text, link }) => (
+            {sublinks.map(({ text, link }) => (
               <ShowcaseCard title={text} href={link} />
             ))}
           </>
