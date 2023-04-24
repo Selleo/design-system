@@ -18,7 +18,7 @@ export function Select({
           {label}
         </label>
       )}
-      <div class="flex justify-between text-neutral-600 dark:text-neutral-300 items-center w-fit text-xs border border-neutral-200 rounded gap-1 relative">
+      <div class="flex justify-between text-neutral-600 dark:text-neutral-300 items-center w-fit text-xs border border-neutral-500 dark:border-white rounded gap-1 relative">
         <select
           class="appearance-none outline-none p-2 pr-6 cursor-pointer bg-transparent"
           {...props}
@@ -33,7 +33,7 @@ export function Select({
         <CaretDownIcon
           width={24}
           height={24}
-          class="m-2 right-0 absolute z-0"
+          class="m-2 right-0 absolute z-0 cursor-pointer"
         />
       </div>
     </div>
