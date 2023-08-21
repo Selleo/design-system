@@ -171,3 +171,7 @@ To publish packages to a private npm organization scope, **remove** the followin
 -  "access": "public"
 - },
 ```
+
+## Keep the changelog
+
+[How to use changelog?](https://github.com/Selleo/templates/tree/main/changelog)
